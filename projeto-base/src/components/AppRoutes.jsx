@@ -15,6 +15,7 @@ import UsuariosLista from "../templates/Usuario/UsuariosLista"
 import LoginNewPass from "../templates/Login/LoginNewPass"
 import UsuarioPerfil from "../templates/Usuario/UsuarioPerfil"
 import FaleConosco from "../templates/Mensagem/FaleConosco"
+import UsuarioAlterarSenha from "../templates/Usuario/UsuarioAlterarSenha"
 
 const AppRoutes = () => {
   return (
@@ -35,6 +36,8 @@ const AppRoutes = () => {
         <Route path="/usuarionovo" element={<UsuarioNovo />} />
         <Route path="/usuarioeditar/:id" element={<UsuarioEditar />} />
         <Route path="/usuarioperfil/:id" element={<UsuarioPerfil />} />
+        <Route path="/usuarioalterarsenha/:id" element={<UsuarioAlterarSenha />} />
+        
 
       </Routes>
     </div>

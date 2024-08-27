@@ -11,7 +11,7 @@ const findById = (id) => {
 
 const create = data => {
     const formData = new FormData();
-    formData.append('emissor', data.emissor);
+    formData.append('emissorMensagem', data.emissorMensagem);
     formData.append('email', data.email);
     formData.append('telefone', data.telefone);
     formData.append('texto', data.texto);
@@ -24,7 +24,7 @@ const inativar = (id) => {
 };
 
 const marcarComoLida = (id) => {
-    return http.mainInstance.put(API_URL + `inativar/${id}`);
+    return http.mainInstance.put(API_URL + `marcarComoLida/${id}`);
 };
 
 const MensagemService = {

@@ -78,7 +78,7 @@ const FaleConosco = () => {
                             </textarea>
                         </div>
                         <div className="col-md-12 mb-1 d-flex flex-row-reverse">
-                            <button className="btn btn-primary">Enviar</button>
+                            <button className="btn btn-secondary mb-2">Enviar</button>
                         </div>
                     </>
                 )}

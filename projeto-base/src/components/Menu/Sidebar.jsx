@@ -26,7 +26,7 @@ const Sidebar = () => {
                     <form onSubmit={logout} className="d-flex flex-column justify-content-around align-items-center m-1 py-2 border-bottom rounded">
                         <img src={currentUser.foto ? currentUser.foto : perfil} alt="logo" className="mt-2 w-25" />
                         <div className="my-2">
-                            <span className="fw-bold fst-italic">{currentUser.nome}</span>
+                            <span className="user-nome">{currentUser.nome}</span>
                         </div>
                         <div>
                             <button className="btn btn-sm btn-warning py-1 px-2 mx-1 fw-bold h5 text-danger rounded shadow">

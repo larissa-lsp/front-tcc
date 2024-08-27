@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/home.png'
@@ -8,6 +8,8 @@ import UsuarioService from "../../services/UsuarioService"
 import './Usuario.css';
 
 const UsuarioPerfil = () => {
+
+    const navigate = useNavigate();
 
     const objectValues = {
         id: null,
@@ -42,6 +44,10 @@ const UsuarioPerfil = () => {
         })
     }, []);
 
+
+    const goToAlterarSenha = () => {
+        navigate(`/usuarioalterarsenha/` + id);
+    }
 
     /*
         A propriedade 'value' para um campo de formulário sem um manipulador 'onChange', 
@@ -91,7 +97,8 @@ const UsuarioPerfil = () => {
                                 Gravar Alterações
                             </button>
                            
-                            <button type="button" className="btn btn-danger shadow">
+                            <button type="button" onClick={goToAlterarSenha}
+                                className="btn btn-danger shadow">
                                 Alterar a Senha
                             </button>
                         </div>
