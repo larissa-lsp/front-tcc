@@ -20,7 +20,7 @@ const Home = () => {
                             title={'Home'}
                             logo={logo}
                         />
-                        <h2 className="user-nome fw-bold fst-italic">Bem-vindo {currentUser.nome}!</h2>
+                        <h2 className="user-nome fw-bold fst-italic">Bem-vindo(a), {currentUser.nome}!</h2>
                     </div>
                 </div> :
                 <AcessoNegado />

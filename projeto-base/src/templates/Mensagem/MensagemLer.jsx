@@ -14,7 +14,7 @@ const MensagemLer = () => {
         id: null,
         dataMensagem: "",
         email: "",
-        emissorMensagem: "",
+        emissor: "",
         texto: "",
         telefone: "",
         statusMensagem: ""
@@ -103,7 +103,7 @@ const MensagemLer = () => {
                         <div className="col-md-6">
                             <label htmlFor="inputEmissor" className="form-label mb-1 fw-bold">Emissor:</label>
                             <input type="text" className="form-control" id="inputEmissor" readOnly
-                                value={mensagem.emissorMensagem || ''} />
+                                value={mensagem.emissor || ''} />
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputEmail" className="form-label mb-1 fw-bold">Email:</label>

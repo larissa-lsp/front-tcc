@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import logo from '../../assets/images/system-logo_128_x_128.png';
+import logo from '../../assets/images/IconeLogo.png';
 import UsuarioService from "../../services/UsuarioService";
 import './Login.css';
 

@@ -51,7 +51,7 @@ const Mensagem = () => {
                                     <tr key={mensagem.id}>
                                         <td scope="row">{mensagem.id}</td>
                                         <td>{mensagem.dataMensagem}</td>
-                                        <td>{mensagem.emissorMensagem}</td>
+                                        <td>{mensagem.emissor}</td>
                                         <td>{mensagem.email}</td>
                                         <td>{mensagem.statusMensagem}</td>
                                         <td>

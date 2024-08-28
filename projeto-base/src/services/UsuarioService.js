@@ -42,6 +42,8 @@ const create = data => {
     formData.append('nome', data.nome);
     formData.append('email', data.email);
     formData.append('nivelAcesso', data.nivelAcesso);
+    // formData.append('senha', "12345678");
+    // formData.append('dataCadastro', now.getDate());
 
     return http.mainInstance.post(API_URL + "create", formData);
 };

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from '../../assets/images/system-logo_128_x_128.png';
+import logo from '../../assets/images/IconeLogo.png';
 import UsuarioService from "../../services/UsuarioService";
 import './Login.css';
 
@@ -63,7 +63,7 @@ const Login = () => {
         <div className="container">
             <form action="" className="login-form"  onSubmit={handleSubmit}>
                 <div className="login-logo">
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo"/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label mb-0 fw-bold">Email:</label>

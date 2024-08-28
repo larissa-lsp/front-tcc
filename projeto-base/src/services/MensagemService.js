@@ -11,7 +11,7 @@ const findById = (id) => {
 
 const create = data => {
     const formData = new FormData();
-    formData.append('emissorMensagem', data.emissorMensagem);
+    formData.append('emissor', data.emissor);
     formData.append('email', data.email);
     formData.append('telefone', data.telefone);
     formData.append('texto', data.texto);
