@@ -1,0 +1,18 @@
+.header{
+    background-color: #0062b2;
+}
+
+.btn-voltar{
+    background-color: #edf222;
+    padding: 10px 30px;
+    border: none;
+}
+
+.btn-voltar :hover{
+    background-color:#b98d07;
+    border: none;
+}
+
+.logo-titulo{
+    width: 300px;
+}
