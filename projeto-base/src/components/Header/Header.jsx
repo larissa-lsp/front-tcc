@@ -10,7 +10,7 @@ const Header = ({goto, title, logo}) => {
             <Link to={goto} className="btn-voltar btn btn-info shadow">Voltar</Link>
                 <img src={title} alt="Logo Título" class="logo-titulo"/>
             <div>
-                <img src={logo} alt="logo" />
+                <img src={logo} alt="logo" class="logo"/>
             </div>
         </div>
     )
