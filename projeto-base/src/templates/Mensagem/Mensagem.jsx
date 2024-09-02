@@ -4,7 +4,7 @@ import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/home.png'
 import { useEffect, useState } from "react"
 import MensagemService from "../../services/MensagemService"
-import LogoTitulo from '../../assets/images/logoTitulo.png'
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 const Mensagem = () => {
     const navigate = useNavigate();
