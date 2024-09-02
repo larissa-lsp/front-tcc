@@ -4,6 +4,7 @@ import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/home.png'
 import { useEffect, useState } from "react"
 import MensagemService from "../../services/MensagemService"
+import LogoTitulo from '../../assets/images/logoTitulo.png'
 
 const Mensagem = () => {
     const navigate = useNavigate();
@@ -30,7 +31,7 @@ const Mensagem = () => {
             <div className="p-3 w-100">
                 <Header
                     goto={'/home'}
-                    title={'Mensagem'}
+                    title={LogoTitulo}
                     logo={logo}
                 />
                 <section className="p-2 m-2 shadow-lg">

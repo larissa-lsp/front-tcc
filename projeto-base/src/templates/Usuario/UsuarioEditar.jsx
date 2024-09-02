@@ -13,8 +13,8 @@ const UsuarioEditar = () => {
         email: "",
         nivelAcesso: ""
     };
-    
-    const [usuario, setUsuario] = useState(objectValues); 
+
+    const [usuario, setUsuario] = useState(objectValues);
 
     const { id } = useParams();
     const _dbRecords = useRef(true);
@@ -60,39 +60,39 @@ const UsuarioEditar = () => {
                     <form className="row g-2 m-5 p-2 rounded-2 shadow">
                         <div className="col-md-2">
                             <label htmlFor="inputID" className="form-label mb-1 fw-bold">ID:</label>
-                            <input type="text" className="form-control" id="inputID" readOnly 
+                            <input type="text" className="form-control" id="inputID" readOnly
                                 defaultValue={usuario.id} />
                         </div>
                         <div className="col-md-5">
                             <label htmlFor="inputNome" className="form-label mb-1 fw-bold">Nome:</label>
-                            <input type="text" className="form-control" id="inputNome"  
+                            <input type="text" className="form-control" id="inputNome"
                                 defaultValue={usuario.nome} />
                         </div>
                         <div className="col-md-5">
                             <label htmlFor="inputEmail4" className="form-label mb-1 fw-bold">Email:</label>
-                            <input type="email" className="form-control" id="inputEmail4"  
+                            <input type="email" className="form-control" id="inputEmail4"
                                 defaultValue={usuario.email} />
                         </div>
 
                         <div className="col-md-4 my-3">
                             <label htmlFor="inputData" className="form-label mb-1 fw-bold">Data de Cadastro:</label>
-                            <input type="text" className="form-control" id="inputData" readOnly  
+                            <input type="text" className="form-control" id="inputData" readOnly
                                 defaultValue={usuario.dataCadastro} />
                         </div>
                         <div className="col-md-4 my-3">
                             <label htmlFor="inputStatus" className="form-label mb-1 fw-bold">Status:</label>
-                            <input type="text" className="form-control" id="inputStatus" readOnly  
+                            <input type="text" className="form-control" id="inputStatus" readOnly
                                 defaultValue={usuario.statusUsuario} />
                         </div>
                         <div className="col-md-4 my-3">
                             <label htmlFor="inputAcesso" className="form-label mb-1 fw-bold">Acesso:</label>
                             <select id="inputAcesso" className="form-select" readOnly
-                                    value={usuario.nivelAcesso} >
+                                value={usuario.nivelAcesso} >
                                 <option value={'USER'}>USER</option>
                                 <option value={'ADMIN'}>ADMIN</option>
                             </select>
                         </div>
-                        
+
                         <div className="col-12 mb-2 d-flex justify-content-between">
                             <button type="submit" className="btn btn-primary">
                                 Gravar Alterações

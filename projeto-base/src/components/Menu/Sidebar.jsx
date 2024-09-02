@@ -23,11 +23,12 @@ const Sidebar = () => {
         <>
             {currentUser ?
                 <div className="sidebar">
-                    <form onSubmit={logout} className="d-flex flex-column justify-content-around align-items-center m-1 py-2 border-bottom rounded">
+                    <form onSubmit={logout} className="mini-perfil d-flex flex-column justify-content-around align-items-center m-1 py-2 border-bottom rounded">
                         <img src={currentUser.foto ? currentUser.foto : perfil} alt="logo" className="mt-2 w-25" />
                         <div className="my-2">
                             <span className="user-nome">{currentUser.nome}</span>
                         </div>
+
                         <div>
                             <button className="btn btn-sm btn-warning py-1 px-2 mx-1 fw-bold h5 text-danger rounded shadow">
                                 <i className="bi bi-box-arrow-left"></i> Sair
@@ -37,6 +38,7 @@ const Sidebar = () => {
                                 Abrir <i className="bi bi-person-gear"></i>
                             </button>
                         </div>
+
                     </form>
 
                     <nav className="nav flex-column">

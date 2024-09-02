@@ -6,6 +6,8 @@ import perfil from '../../assets/images/perfil_blz.jpg'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import './Usuario.css';
+import LogoTitulo from '../../assets/images/logoTitulo.png'
+
 
 const UsuarioPerfil = () => {
 
@@ -17,8 +19,8 @@ const UsuarioPerfil = () => {
         email: "",
         nivelAcesso: ""
     };
-    
-    const [usuario, setUsuario] = useState(objectValues); 
+
+    const [usuario, setUsuario] = useState(objectValues);
 
     const { id } = useParams();
     const _dbRecords = useRef(true);
@@ -61,7 +63,7 @@ const UsuarioPerfil = () => {
             <div className="p-3 w-100">
                 <Header
                     goto={'/home'}
-                    title={'Perfil de Usuário'}
+                    title={LogoTitulo}
                     logo={logo}
                 />
                 <section className="m-1 p-1 shadow-lg">
@@ -71,32 +73,32 @@ const UsuarioPerfil = () => {
                         </div>
                         <div className="col-md-12 mb-3">
                             <label htmlFor="inputNome" className="form-label mb-1 fw-bold">Nome:</label>
-                            <input type="text" className="form-control" id="inputNome"  
+                            <input type="text" className="form-control" id="inputNome"
                                 defaultValue={usuario.nome} />
                         </div>
                         <div className="col-md-12 mb-3">
                             <label htmlFor="inputEmail4" className="form-label mb-1 fw-bold">Email:</label>
-                            <input type="email" className="form-control text-center" id="inputEmail4" readOnly 
+                            <input type="email" className="form-control text-center" id="inputEmail4" readOnly
                                 defaultValue={usuario.email} />
                         </div>
 
                         <div className="col-md-6 mb-3">
                             <label htmlFor="inputnivelAcesso" className="form-label mb-1 fw-bold">Nível de Acesso:</label>
-                            <input type="text" className="form-control text-center" id="inputnivelAcesso" readOnly  
+                            <input type="text" className="form-control text-center" id="inputnivelAcesso" readOnly
                                 defaultValue={usuario.nivelAcesso} />
                         </div>
                         <div className="col-md-6 mb-3">
                             <label htmlFor="inputStatus" className="form-label mb-1 fw-bold">Status:</label>
-                            <input type="text" className="form-control text-center" id="inputStatus" readOnly  
+                            <input type="text" className="form-control text-center" id="inputStatus" readOnly
                                 defaultValue={usuario.statusUsuario} />
                         </div>
-                       
-                        
+
+
                         <div className="col-12 mb-2 d-flex justify-content-between">
                             <button type="submit" className="btn btn-primary shadow">
                                 Gravar Alterações
                             </button>
-                           
+
                             <button type="button" onClick={goToAlterarSenha}
                                 className="btn btn-danger shadow">
                                 Alterar a Senha
