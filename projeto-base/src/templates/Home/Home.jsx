@@ -4,7 +4,7 @@ import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/home.png'
 import UsuarioService from "../../services/UsuarioService"
 import AcessoNegado from "./AcessoNegado"
-import LogoTitulo from '../../assets/images/logoTitulo.png'
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 const Home = () => {
 
