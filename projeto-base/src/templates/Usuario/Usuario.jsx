@@ -2,7 +2,8 @@ import { Link } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/home.png'
-import LogoTitulo from '../../assets/images/LogoTitulo.png'
+import LogoTitulo from '../../assets/images/logoTitulo.png'
+import NewUser from '../../assets/images/novoUsuario.png'
 
 
 const Usuario = () => {
@@ -18,8 +19,10 @@ const Usuario = () => {
                 />
                 <section className="m-2 p-2 shadow-lg">
                     <div className="d-flex justify-content-around">
+
                         <Link to={'/usuarionovo'}
                             className="btn btn-lg btn-primary">
+                            newUser={NewUser}
                             Novo Usuário
                         </Link>
                         <Link to={'/usuarioslista'}
