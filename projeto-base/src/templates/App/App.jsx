@@ -20,9 +20,6 @@ function App() {
                 <a className="nav-link" href="#">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Notícias</a>
-              </li>
-              <li className="nav-item">
                 <a className="nav-link" href="#">Quem Somos</a>
               </li>
               <li className="nav-item">
