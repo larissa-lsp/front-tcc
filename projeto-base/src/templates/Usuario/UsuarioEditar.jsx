@@ -4,6 +4,7 @@ import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/home.png'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService"
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 const UsuarioEditar = () => {
 
@@ -53,7 +54,7 @@ const UsuarioEditar = () => {
             <div className="p-3 w-100">
                 <Header
                     goto={'/usuario'}
-                    title={'Editar Usuário'}
+                    title={LogoTitulo}
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">

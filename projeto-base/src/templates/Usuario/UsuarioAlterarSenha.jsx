@@ -6,6 +6,7 @@ import perfil from '../../assets/images/perfil_blz.jpg'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import './Usuario.css';
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 const UsuarioAlterarSenha = () => {
 
@@ -93,7 +94,7 @@ const UsuarioAlterarSenha = () => {
             <div className="p-3 w-100">
                 <Header
                     goto={'/home'}
-                    title={'*** Alterar a Senha ***'}
+                    title={LogoTitulo}
                     logo={logo}
                 />
                 <section className="m-1 p-1 shadow-lg">

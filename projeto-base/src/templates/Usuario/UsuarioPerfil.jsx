@@ -6,7 +6,7 @@ import perfil from '../../assets/images/perfil_blz.jpg'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import './Usuario.css';
-import LogoTitulo from '../../assets/images/logoTitulo.png'
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 
 const UsuarioPerfil = () => {

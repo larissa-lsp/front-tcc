@@ -5,6 +5,7 @@ import logo from '../../assets/images/home.png'
 import { useEffect } from "react"
 import { useState } from "react"
 import MensagemService from "../../services/MensagemService"
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 const MensagemLer = () => {
 
@@ -79,7 +80,7 @@ const MensagemLer = () => {
             <div className="p-3 w-100">
                 <Header
                     goto={'/mensagem'}
-                    title={'Ler Mensagem'}
+                    title={LogoTitulo}
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
