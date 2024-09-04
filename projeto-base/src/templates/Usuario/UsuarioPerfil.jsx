@@ -6,8 +6,7 @@ import perfil from '../../assets/images/perfil_blz.jpg'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import './Usuario.css';
-import LogoTitulo from '../../assets/images/LogoTitulo.png'
-
+import ImageUploaderModal from "../../components/ImageUploader/ImageUploaderModal"
 
 const UsuarioPerfil = () => {
 
@@ -19,14 +18,25 @@ const UsuarioPerfil = () => {
         email: "",
         nivelAcesso: ""
     };
-
-    const [usuario, setUsuario] = useState(objectValues);
+    
+    const [usuario, setUsuario] = useState(objectValues); 
 
     const { id } = useParams();
     const _dbRecords = useRef(true);
     const [formData, setFormData] = useState({});
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState();
+    const [dataFile, setDataFile] = useState();
+    const [chosenImage, setChosenImage] = useState();
+
+    const setFile = (dataFile) => {
+        setDataFile(dataFile);
+    }
+
+    const setImage = (dataImage) => {
+        setChosenImage(dataImage);
+    }
+
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -63,7 +73,7 @@ const UsuarioPerfil = () => {
             <div className="p-3 w-100">
                 <Header
                     goto={'/home'}
-                    title={LogoTitulo}
+                    title={'Perfil de Usuário'}
                     logo={logo}
                 />
                 <section className="m-1 p-1 shadow-lg">
@@ -71,34 +81,40 @@ const UsuarioPerfil = () => {
                         <div className="col-md-12">
                             <img src={usuario.foto ? usuario.foto : perfil} alt="..." />
                         </div>
+                        <div className="col-md-12 text-center">
+                            <ImageUploaderModal
+                                setFile={setFile}
+                                setImage={setImage}
+                                chosenImage={chosenImage} />
+                        </div>
                         <div className="col-md-12 mb-3">
                             <label htmlFor="inputNome" className="form-label mb-1 fw-bold">Nome:</label>
-                            <input type="text" className="form-control" id="inputNome"
+                            <input type="text" className="form-control" id="inputNome"  
                                 defaultValue={usuario.nome} />
                         </div>
                         <div className="col-md-12 mb-3">
                             <label htmlFor="inputEmail4" className="form-label mb-1 fw-bold">Email:</label>
-                            <input type="email" className="form-control text-center" id="inputEmail4" readOnly
+                            <input type="email" className="form-control text-center" id="inputEmail4" readOnly 
                                 defaultValue={usuario.email} />
                         </div>
 
                         <div className="col-md-6 mb-3">
                             <label htmlFor="inputnivelAcesso" className="form-label mb-1 fw-bold">Nível de Acesso:</label>
-                            <input type="text" className="form-control text-center" id="inputnivelAcesso" readOnly
+                            <input type="text" className="form-control text-center" id="inputnivelAcesso" readOnly  
                                 defaultValue={usuario.nivelAcesso} />
                         </div>
                         <div className="col-md-6 mb-3">
                             <label htmlFor="inputStatus" className="form-label mb-1 fw-bold">Status:</label>
-                            <input type="text" className="form-control text-center" id="inputStatus" readOnly
+                            <input type="text" className="form-control text-center" id="inputStatus" readOnly  
                                 defaultValue={usuario.statusUsuario} />
                         </div>
-
-
+                       
+                        
                         <div className="col-12 mb-2 d-flex justify-content-between">
                             <button type="submit" className="btn btn-primary shadow">
                                 Gravar Alterações
                             </button>
-
+                           
                             <button type="button" onClick={goToAlterarSenha}
                                 className="btn btn-danger shadow">
                                 Alterar a Senha

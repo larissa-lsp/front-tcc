@@ -21,7 +21,6 @@ const Usuario = () => {
 
                         <Link to={'/usuarionovo'}
                             className="btn btn-lg btn-primary">
-                            newUser={NewUser}
                             Novo Usuário
                         </Link>
                         <Link to={'/usuarioslista'}
