@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import App from "../templates/App/App"
 import Home from "../templates/Home/Home"
+import HomeNoticia from "../templates/HomeNoticia/HomeNoticia"
 
 import LoginForgotPass from "../templates/Login/LoginForgotPass"
 import Login from "../templates/Login/Login"
@@ -16,7 +17,8 @@ import LoginNewPass from "../templates/Login/LoginNewPass"
 import UsuarioPerfil from "../templates/Usuario/UsuarioPerfil"
 import FaleConosco from "../templates/Mensagem/FaleConosco"
 import UsuarioAlterarSenha from "../templates/Usuario/UsuarioAlterarSenha"
-import HomeNoticia from "../templates/HomeNoticia/HomeNoticia"
+
+import Noticia from "../templates/Noticia/Noticia"
 
 
 const AppRoutes = () => {
@@ -39,7 +41,12 @@ const AppRoutes = () => {
         <Route path="/usuarioeditar/:id" element={<UsuarioEditar />} />
         <Route path="/usuarioperfil/:id" element={<UsuarioPerfil />} />
         <Route path="/usuarioalterarsenha/:id" element={<UsuarioAlterarSenha />} />
-        
+
+        <Route path="/noticia" element={<Noticia />} />
+        <Route path="/noticiaslista" element={<NoticiaLista />} />
+        <Route path="/noticianova" element={<NoticiaNova />} />
+        <Route path="/noticiaeditar" element={<NoticiaEditar />} />
+
 
       </Routes>
     </div>

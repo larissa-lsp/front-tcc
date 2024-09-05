@@ -1,5 +1,6 @@
 import { useState } from "react"
 import MensagemService from "../../services/MensagemService"
+import logo from '../../assets/images/IconeLogo.png';
 import './FaleConosco.css'
 
 
