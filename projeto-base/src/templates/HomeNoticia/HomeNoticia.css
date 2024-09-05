@@ -1,105 +1,37 @@
-.row-home {
-    display: flex;
-    flex-wrap: wrap;
-}
-.title{
-    color: #0062B2;
-    font-size: 45px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.main-home {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: center;
-    padding: 20px;
-    flex: 50%;
-}
-.container {
-    overflow: hidden;
-}
-
-.noticia-container{
-    align-items: center;
-    background-color: #E9F5FE;
-    display: flex;
-    margin: auto 20vh;
-    border-radius: 10px;
-    padding: 25px;
-    gap: 20px;
-    text-align: start;
-}
-
-.txt-noticia{
-font-size: 20px;
-}
-
-.img-noticia{
-    width: 70%;
-}
-
-.side-home {
-    padding: 20px;
-    flex: 50%
-}
-
-.popular-news{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: right;
-    margin-right: 10px;
-}
-
-.popular-news a{
-    color: #000;
-    font-size: 20px;
-}
-
-hr{
-    margin-left: 20px;
-    margin-right: 20px;
-    border-color: #0062B2;
-}
-
-.sobre-nos-container{
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-}
-
-.img-sobreNos{
-    padding-right: 70px;
-    width: 100%;
-}
-
-
-.footer{
-    position: relative;
+.footer {
     font-size: 20px;
     background-color: #0062B2;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
-.footer div{
+
+.footer div {
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.footer a{
+.footer a {
     color: #fff;
 }
-.footer-direitos{
+
+.footer-direitos {
     flex-direction: column;
     justify-content: left;
     font-weight: bold;
     font-size: 15px;
 }
 
-.redes-sociais{
+.redes-sociais {
     display: flex;
     flex-direction: column;
 }

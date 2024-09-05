@@ -16,12 +16,14 @@ import LoginNewPass from "../templates/Login/LoginNewPass"
 import UsuarioPerfil from "../templates/Usuario/UsuarioPerfil"
 import FaleConosco from "../templates/Mensagem/FaleConosco"
 import UsuarioAlterarSenha from "../templates/Usuario/UsuarioAlterarSenha"
+import HomeNoticia from "../templates/HomeNoticia/HomeNoticia"
+
 
 const AppRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<HomeNoticia/>} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotpass" element={<LoginForgotPass />} />
