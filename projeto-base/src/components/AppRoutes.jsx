@@ -18,13 +18,13 @@ import UsuarioPerfil from "../templates/Usuario/UsuarioPerfil"
 import FaleConosco from "../templates/Mensagem/FaleConosco"
 import UsuarioAlterarSenha from "../templates/Usuario/UsuarioAlterarSenha"
 
-// import Noticia from "../templates/Noticia/Noticia"
+import Noticia from "../templates/Noticia/Noticia"
 
 const AppRoutes = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<HomeNoticia />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotpass" element={<LoginForgotPass />} />
@@ -41,12 +41,11 @@ const AppRoutes = () => {
         <Route path="/usuarioperfil/:id" element={<UsuarioPerfil />} />
         <Route path="/usuarioalterarsenha/:id" element={<UsuarioAlterarSenha />} />
 
-{/*
+
         <Route path="/noticia" element={<Noticia />} />
         <Route path="/noticiaslista" element={<NoticiaLista />} />
         <Route path="/noticianova" element={<NoticiaNova />} />
         <Route path="/noticiaeditar/:id" element={<NoticiaEditar />} />
-  */}
 
       </Routes>
     </div>

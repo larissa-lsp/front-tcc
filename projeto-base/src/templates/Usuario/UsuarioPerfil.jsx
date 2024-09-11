@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import './Usuario.css';
 import ImageUploaderModal from "../../components/ImageUploader/ImageUploaderModal"
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 const UsuarioPerfil = () => {
 
@@ -72,8 +73,8 @@ const UsuarioPerfil = () => {
             <Sidebar />
             <div className="p-3 w-100">
                 <Header
-                    goto={'/home'}
-                    title={'Perfil de Usuário'}
+                    goto={'/usuario'}
+                    title={LogoTitulo}
                     logo={logo}
                 />
                 <section className="m-1 p-1 shadow-lg">
