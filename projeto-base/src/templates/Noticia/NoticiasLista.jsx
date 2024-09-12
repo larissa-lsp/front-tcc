@@ -1,14 +1,15 @@
 import { Link, useNavigate } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
-import logo from '../../assets/images/home.png'
+import logo from '../../assets/images/IconeLogo.png';
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
-const ProdutosLista = () => {
+const NoticiasLista = () => {
 
     const navigate = useNavigate();
 
     const goTo = () => {
-        navigate('/produtoeditar')
+        navigate('/noticiaeditar')
     }
 
     return (
@@ -16,8 +17,8 @@ const ProdutosLista = () => {
             <Sidebar />
             <div className="p-3 w-100">
                 <Header
-                    goto={'/produto'}
-                    title={'Lista de Produtos'}
+                    goto={'/noticia'}
+                    title={LogoTitulo}
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
@@ -26,10 +27,11 @@ const ProdutosLista = () => {
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col">Código</th>
-                                    <th scope="col">Preço</th>
-                                    <th scope="col">Categoria</th>
+                                    <th scope="col">Manchete</th>
+                                    <th scope="col">Palavras-chave</th>
+                                    <th scope="col">Data envio</th>
+                                    <th scope="col">Data publicação</th>
+                                    <th scope="col">usuario_id</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Abrir</th>
                                 </tr>
@@ -39,6 +41,7 @@ const ProdutosLista = () => {
                                     <td scope="row">1</td>
                                     <td>Mark</td>
                                     <td>Otto</td>
+                                    <td>@mdo</td>
                                     <td>@mdo</td>
                                     <td>@mdo</td>
                                     <td>@mdo</td>
@@ -58,4 +61,4 @@ const ProdutosLista = () => {
     )
 }
 
-export default ProdutosLista
+export default NoticiasLista

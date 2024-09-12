@@ -19,6 +19,10 @@ import FaleConosco from "../templates/Mensagem/FaleConosco"
 import UsuarioAlterarSenha from "../templates/Usuario/UsuarioAlterarSenha"
 
 import Noticia from "../templates/Noticia/Noticia"
+import NoticiaEditar from "../templates/Noticia/NoticiaEditar"
+import NoticiaNova from "../templates/Noticia/NoticiaNova"
+import NoticiasLista from "../templates/Noticia/NoticiasLista"
+
 
 const AppRoutes = () => {
   return (
@@ -41,11 +45,11 @@ const AppRoutes = () => {
         <Route path="/usuarioperfil/:id" element={<UsuarioPerfil />} />
         <Route path="/usuarioalterarsenha/:id" element={<UsuarioAlterarSenha />} />
 
-
         <Route path="/noticia" element={<Noticia />} />
-        <Route path="/noticiaslista" element={<NoticiaLista />} />
+        <Route path="/noticiaslista" element={<NoticiasLista />} />
         <Route path="/noticianova" element={<NoticiaNova />} />
         <Route path="/noticiaeditar/:id" element={<NoticiaEditar />} />
+        
 
       </Routes>
     </div>

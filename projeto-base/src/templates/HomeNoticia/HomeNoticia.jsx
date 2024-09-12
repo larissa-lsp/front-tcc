@@ -1,14 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Header from "../../components/Header/Header"
+import logo from '../../assets/images/home.png'
 import InstagramIcon from '../../assets/images/instagram.png'
 import LinkedInIcon from '../../assets/images/linkedin.png'
 import FacebookIcon from '../../assets/images/facebook.png'
 import './HomeNoticia.css';
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
+
 
 const HomeNoticia = () => {
     return (
-        
-            <footer className="footer">
+        <div>
+            <Header
+                goto={'/noticia'}
+                title={LogoTitulo}
+                logo={logo}
+                />
+
+           <footer className="footer">
                 <div className="footer-direitos">
                     <p>Todos direitos reservados Portal360 Ltda.</p>
                 </div>
@@ -26,7 +36,9 @@ const HomeNoticia = () => {
                         <li><img src={FacebookIcon} alt="Facebook" width="5%" /> Facebook</li>
                     </ul>
                 </div>
-            </footer>
+            </footer> 
+        </div>
+            
     );
 };
 
