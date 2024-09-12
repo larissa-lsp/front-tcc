@@ -12,6 +12,23 @@ const NoticiasLista = () => {
         navigate('/noticiaeditar')
     }
 
+    const [noticias, setNoticias] = useState([]);
+
+    useEffect(() => {
+        NoticiaService.findAll().then(
+            (response) => {
+                const noticias = response.data;
+                setNoticias(noticias);
+            }
+        ).catch((error) => {
+            console.log(error);
+        })
+    }, []);
+
+    const editar = (id) => {
+        navigate(`/noticiaeditar/` + id)
+    }
+
     return (
         <div className="d-flex">
             <Sidebar />
@@ -22,7 +39,7 @@ const NoticiasLista = () => {
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
-                    <div>
+                    <div className="table-wrapper">
                         <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
@@ -37,21 +54,24 @@ const NoticiasLista = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td scope="row">1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                    <td>
-                                        <button type="button" onClick={() => goTo()}
-                                            className="btn btn-sm btn-warning">
-                                            <i className="bi bi-envelope-open me-2"></i>Abrir
-                                        </button>
-                                    </td>
-                                </tr>
+                                {noticias?.map((noticia) => (
+                                    <tr className="" key={noticia.id}>
+                                        <td>{noticia.id}</td>
+                                        <td>{noticia.manchete}</td>
+                                        <td>{noticia.conteudo}</td>
+                                        <td>{noticia.palavrasChave}</td>
+                                        {/* <td>{noticia.dataEnvio}</td> */}
+                                        <td>{noticia.dataPublicacao}</td>
+                                        <td>{noticia.fonte}</td>
+                                        {/* <td>{noticia.usuario_id}</td> */}
+                                        <td>
+                                            <button onClick={() => editar(noticia.id)}
+                                                className="btn btn-sm btn-warning rounded">
+                                                <i className="bi bi-envelope-open"> Abrir</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>

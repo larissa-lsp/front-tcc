@@ -7,6 +7,43 @@ import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 const NoticiaEditar = () => {
 
+    const objectValues = {
+        id: null,
+        manchete: "",
+        conteudo: "",
+        palavrasChave: "",
+        // dataEnvio: "",
+        dataPublicacao: "",
+        fonte: "",
+        usuario_id: "",
+    };
+
+    const [noticia, setNoticia] = useState(objectValues);
+
+    const { id } = useParams();
+    const _dbRecords = useRef(true);
+    const [formData, setFormData] = useState({});
+    const [successful, setSuccessful] = useState(false);
+    const [message, setMessage] = useState();
+
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setFormData(formData => ({ ...formData, [name]: value }));
+    }
+
+    useEffect(() => {
+        NoticiaService.findById(id).then(
+            (response) => {
+                const noticia = response.data;
+                setNoticia(noticia);
+                console.log(noticia);
+            }
+        ).catch((error) => {
+            console.log(error);
+        })
+    }, []);
+
     return (
         <div className="d-flex">
             <Sidebar />
@@ -21,12 +58,12 @@ const NoticiaEditar = () => {
 
                         <div className="col-md-12">
                             <label htmlFor="usuario_id" className="form-label">Usuário ID</label>
-                            <input type="text" className="form-control" id="usuario_id" />
+                            <input type="text" className="form-control" id="usuario_id" readOnly/>
                         </div>
 
                         <div className="col-md-1">
                             <label htmlFor="inputId" className="form-label">ID</label>
-                            <input type="text" className="form-control" id="inputId" />
+                            <input type="text" className="form-control" id="inputId" readOnly/>
                         </div>
 
                         <div className="col-md-11">
