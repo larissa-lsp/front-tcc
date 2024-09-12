@@ -1,5 +1,6 @@
 import { useState } from "react"
 import MensagemService from "../../services/MensagemService"
+import logo from '../../assets/images/IconeLogo.png';
 import './FaleConosco.css'
 
 
@@ -42,7 +43,6 @@ const FaleConosco = () => {
         }
     }
 
-
     return (
         <div className="d-flex justify-content-center">
             <form className="form-fale row g-2 rounded-2 shadow" onSubmit={handleSubmit}>
@@ -83,7 +83,7 @@ const FaleConosco = () => {
                         </div>
                     </>
                 )}
-                {message && (
+                {/* {{message && (
                     <div className="m-1">
                         <div className={
                             "text-center h4 fst-italic py-4 rounded-2 border border-5 " + (successful ? "border-success" : "border-danger")
@@ -91,7 +91,7 @@ const FaleConosco = () => {
                             {message}
                         </div>
                     </div>
-                )}
+                    )}*/}
             </form>
         </div>
     )

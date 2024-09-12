@@ -3,29 +3,27 @@ import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
-import NewUser from '../../assets/images/novoUsuario.png'
 
-const Usuario = () => {
+const Noticia = () => {
 
     return (
         <div className="d-flex">
             <Sidebar />
             <div className="p-3 w-100">
                 <Header
-                    goto={'/usuario'}
+                    goto={'/home'}
                     title={LogoTitulo}
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
                     <div className="d-flex justify-content-around">
-
-                        <Link to={'/usuarionovo'}
+                        <Link to={'/noticianova'}
                             className="btn btn-lg btn-primary">
-                            Novo Usuário
+                            Nova Notícia
                         </Link>
-                        <Link to={'/usuarioslista'}
+                        <Link to={'/noticiaslista'}
                             className="btn btn-lg btn-warning">
-                            Lista de Usuários
+                            Lista de Notícias
                         </Link>
                     </div>
                 </section>
@@ -34,4 +32,4 @@ const Usuario = () => {
     )
 }
 
-export default Usuario
+export default Noticia
