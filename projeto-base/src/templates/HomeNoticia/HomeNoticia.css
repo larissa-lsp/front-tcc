@@ -6,11 +6,12 @@
 }
 
 .footer {
-    font-size: 20px;
+    font-size: 15px;
     background-color: #0062B2;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    grid-template-columns: repeat(3, 2fr);
 }
 
 .footer div {
@@ -22,6 +23,8 @@
 
 .footer a {
     color: #fff;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .footer-direitos {
@@ -33,5 +36,4 @@
 
 .redes-sociais {
     display: flex;
-    flex-direction: column;
 }

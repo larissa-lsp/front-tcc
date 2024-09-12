@@ -23,9 +23,8 @@ const HomeNoticia = () => {
                     <p>Todos direitos reservados Portal360 Ltda.</p>
                 </div>
 
-                <Link to={'/login'}
-                    className='btn btn-sm btn-warning'>
-                    Acesso Restrito
+                <Link to={'/login'} className="acesso-restrito">
+                    <p>Acesso Restrito</p>
                 </Link>
 
                 <div className="redes-sociais">
