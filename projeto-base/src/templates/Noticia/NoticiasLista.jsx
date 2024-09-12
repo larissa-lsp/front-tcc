@@ -48,6 +48,8 @@ const NoticiasLista = () => {
                                     <th scope="col">Palavras-chave</th>
                                     <th scope="col">Data envio</th>
                                     <th scope="col">Data publicação</th>
+                                    <th scope="col">Foto</th>
+                                    <th scope="col">Fonte</th>
                                     <th scope="col">usuario_id</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Abrir</th>
@@ -62,6 +64,7 @@ const NoticiasLista = () => {
                                         <td>{noticia.palavrasChave}</td>
                                         {/* <td>{noticia.dataEnvio}</td> */}
                                         <td>{noticia.dataPublicacao}</td>
+                                        <td>{noticia.foto}</td>
                                         <td>{noticia.fonte}</td>
                                         {/* <td>{noticia.usuario_id}</td> */}
                                         <td>

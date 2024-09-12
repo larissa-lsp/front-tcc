@@ -23,6 +23,7 @@ const create = data => {
     formData.append('palavrasChave', data.palavrasChave);
     // formData.append('dataEnvio', now.getDate());
     formData.append('dataPublicacao', data.dataPublicacao);
+    formData.append('foto', data.foto);
     formData.append('fonte', data.fonte);
     // formData.append('usuario_id', now.getId());
 
