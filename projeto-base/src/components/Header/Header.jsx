@@ -8,9 +8,9 @@ const Header = ({goto, title, logo}) => {
             d-flex justify-content-between align-items-center 
             p-3 border-bottom shadow rounded">
             <Link to={goto} className="btn-voltar btn btn-info shadow">Voltar</Link>
-                <img src={title} alt="Logo Título" class="logo-titulo"/>
+                <img src={title} alt="Logo Título" className="logo-titulo"/>
             <div>
-                <img src={logo} alt="logo" class="logo"/>
+                <img src={logo} alt="logo" className="logo"/>
             </div>
         </div>
     )

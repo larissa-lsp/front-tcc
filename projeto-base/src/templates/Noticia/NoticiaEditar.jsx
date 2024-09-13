@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
+import { useState } from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
+import NoticiaService from "../../services/NoticiaService";
 
 const NoticiaEditar = () => {
 
@@ -11,10 +15,9 @@ const NoticiaEditar = () => {
         manchete: "",
         conteudo: "",
         palavrasChave: "",
-        // dataEnvio: "",
+        dataEnvio: "",
         dataPublicacao: "",
         fonte: "",
-        usuario_id: "",
     };
 
     const [noticia, setNoticia] = useState(objectValues);
@@ -55,33 +58,34 @@ const NoticiaEditar = () => {
                 <section className="m-2 p-2 shadow-lg">
                     <form className="row g-3">
 
-                        <div className="col-md-12">
-                            <label htmlFor="usuario_id" className="form-label">Usuário ID</label>
-                            <input type="text" className="form-control" id="usuario_id" readOnly/>
-                        </div>
 
                         <div className="col-md-1">
                             <label htmlFor="inputId" className="form-label">ID</label>
-                            <input type="text" className="form-control" id="inputId" readOnly/>
+                            <input type="text" className="form-control" id="inputId" readOnly
+                                defaultValue={noticia.id} />
                         </div>
 
                         <div className="col-md-11">
                             <label htmlFor="inputManchete" className="form-label">Manchete:</label>
-                            <input type="text" className="form-control" id="inputManchete" />
+                            <input type="text" className="form-control" id="inputManchete" 
+                                defaultValue={noticia.manchete} />
                         </div>
 
                         <div className="col-md-12">
                             <label htmlFor="inputConteudo" className="form-label">Conteúdo:</label>
-                            <textarea rows={20} className="form-control" id="inputConteudo" >
+                            <textarea rows={20} className="form-control" id="inputConteudo"
+                            defaultValue={noticia.conteudo} >
                             </textarea>
                         </div>
 
                         <div className="col-md-12">
                             <label htmlFor="inputPalavrasChave" className="form-label">Palavras-chave:</label>
-                            <textarea rows={2} className="form-control" id="inputPalavrasChave">
+                            <textarea rows={2} className="form-control" id="inputPalavrasChave"
+                            defaultValue={noticia.palavrasChave} >
                             </textarea>
                         </div>
 
+                        {/*
                         <div className="col-md-6">
                             <label htmlFor="inputDataEnvio" className="form-label">Data de envio</label>
                             <input type="date" className="form-control" id="inputDataEnvio" />
@@ -91,15 +95,18 @@ const NoticiaEditar = () => {
                             <label htmlFor="inputDataPublicacao" className="form-label">Data de publicação</label>
                             <input type="date" className="form-control" id="inputDataPublicacao" />
                         </div>
-
+                        */}
+                        
                         <div className="form-group col-md-9">
                             <label htmlFor="inputFonte" className="form-label">Fonte:</label>
-                            <input type="text" className="form-control" id="inputFonte" />
+                            <input type="text" className="form-control" id="inputFonte" 
+                            defaultValue={noticia.fonte} />
                         </div>
 
                         <div className="form-group col-md-12">
                             <label htmlFor="inputFoto" className="form-label">Foto:</label>
-                            <input type="file" className="form-control-file" id="inputFoto" />
+                            <input type="file" className="form-control-file" id="inputFoto" 
+                            defaultValue={noticia.foto}/>
                         </div>
 
 

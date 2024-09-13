@@ -9,24 +9,17 @@ const findById = (id) => {
     return http.mainInstance.get(API_URL + `findById/${id}`);
 };
 
-{/* verificar com o professor sobre essa função, se será utilizada ou nao!!!!
 const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));
 };
-*/}
 
-// em atualizações !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const create = data => {
     const formData = new FormData();
     formData.append('manchete', data.manchete);
     formData.append('conteudo', data.conteudo);
     formData.append('palavrasChave', data.palavrasChave);
-    // formData.append('dataEnvio', now.getDate());
-    formData.append('dataPublicacao', data.dataPublicacao);
     formData.append('foto', data.foto);
     formData.append('fonte', data.fonte);
-    // formData.append('usuario_id', now.getId());
-
     return http.mainInstance.post(API_URL + "create", formData);
 };
 
@@ -38,13 +31,13 @@ const inativar = (id) => {
     return http.mainInstance.put(API_URL + `inativar/${id}`);
 };
 
-const UsuarioService = {
+const NoticiaService = {
     findAll,
     findById,
-    // getCurrentUser,
+    getCurrentUser,
     create,
     update,
     inativar,
 }
 
-export default UsuarioService;
+export default NoticiaService;

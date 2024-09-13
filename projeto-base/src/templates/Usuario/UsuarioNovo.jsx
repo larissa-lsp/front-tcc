@@ -24,25 +24,7 @@ const UsuarioNovo = () => {
         setNivel(e.target.value);
     }
 */
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSuccessful(false);
-
-        UsuarioService.create(formData).then(
-            (response) => {
-                setMessage(response.data.message);
-                setSuccessful(true);
-                /*window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                })*/
-            }, (error) => {
-                const message = error.response.data.message;
-                setMessage(message);
-            }
-        )
-    }
-
+    
     return (
         <div className="d-flex">
             <Sidebar />

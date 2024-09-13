@@ -2,6 +2,9 @@ import { Link } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
+import { useState } from "react";
+import NoticiaService from "../../services/NoticiaService";
 
 const NoticiaNova = () => {
     const objectValues = {
@@ -26,7 +29,6 @@ const NoticiaNova = () => {
         setFormData(formData => ({ ...formData, [name]: value }));
     }
 
-    /*
     const handleSubmit = (e) => {
         e.preventDefault();
         setSuccessful(false);
@@ -46,35 +48,20 @@ const NoticiaNova = () => {
             )
         }
     }
-    */
 
     return (
         <div className="d-flex">
             <Sidebar />
+            <div className="p-3 w-100">
             <Header
                     goto={'/noticia'}
                     title={LogoTitulo}
                     logo={logo}
                 />
             <section className="m-2 p-2 shadow-lg">
-                <form className="row g-3">
+                <form className="row g-3" onSubmit={handleSubmit}>
                     {!successful && (
                         <>
-                            <div className="form-group col-md-12">
-                                <label htmlFor="usuario_id" className="col-form-label">Usuário ID</label>
-                                <input type="text" className="form-control" id="usuario_id" placeholder="ID colaborador" readonly
-                                    name="usuario_id"
-                                    value={formData.usuario_id || ""}
-                                    onChange={handleChange} />
-                            </div>
-
-                            <div className="form-group col-md-1">
-                                <label htmlFor="inputId" className="col-form-label">ID</label>
-                                <input type="text" className="form-control" id="inputId" placeholder="ID" readonly
-                                    name="id"
-                                    value={formData.id || ""}
-                                    onChange={handleChange} />
-                            </div>
 
                             <div className="form-group col-md-11">
                                 <label htmlFor="inputManchete" className="col-form-label">Manchete:</label>
@@ -100,22 +87,6 @@ const NoticiaNova = () => {
                                     value={formData.palavrasChave || ""}
                                     onChange={handleChange} >
                                 </textarea>
-                            </div>
-
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputDataEnvio" className="col-form-label">Data de envio</label>
-                                <input type="date" className="form-control" id="inputDataEnvio" placeholder="Data de envio" readonly
-                                    name="dataEnvio"
-                                    value={formData.dataEnvio || ""}
-                                    onChange={handleChange} />
-                            </div>
-
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputDataPublicacao" className="col-form-label">Data de publicação</label>
-                                <input type="date" className="form-control" id="inputDataPublicacao" placeholder="Data de publicação" readonly
-                                    name="dataPublicacao"
-                                    value={formData.dataPublicacao || ""}
-                                    onChange={handleChange} />
                             </div>
 
                             <div className="form-group col-md-9">
@@ -151,6 +122,7 @@ const NoticiaNova = () => {
                     )}
                 </form>
             </section>
+            </div>
         </div>
     )
 }

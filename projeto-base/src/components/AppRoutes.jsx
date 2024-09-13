@@ -32,7 +32,7 @@ const AppRoutes = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forgotpass" element={<LoginForgotPass />} />
-        <Route path="/newpass/:id" element={<LoginNewPass/>} />
+        <Route path="/newpass/:id" element={<LoginNewPass />} />
 
         <Route path="/mensagem" element={<Mensagem />} />
         <Route path="/mensagemler/:id" element={<MensagemLer />} />
@@ -49,7 +49,7 @@ const AppRoutes = () => {
         <Route path="/noticiaslista" element={<NoticiasLista />} />
         <Route path="/noticianova" element={<NoticiaNova />} />
         <Route path="/noticiaeditar/:id" element={<NoticiaEditar />} />
-        
+
 
       </Routes>
     </div>

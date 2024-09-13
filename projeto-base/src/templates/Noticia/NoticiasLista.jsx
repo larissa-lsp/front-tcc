@@ -3,6 +3,9 @@ import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
+import { useState } from "react";
+import { useEffect } from "react";
+import NoticiaService from "../../services/NoticiaService";
 
 const NoticiasLista = () => {
 
@@ -46,11 +49,6 @@ const NoticiasLista = () => {
                                     <th scope="col">ID</th>
                                     <th scope="col">Manchete</th>
                                     <th scope="col">Palavras-chave</th>
-                                    <th scope="col">Data envio</th>
-                                    <th scope="col">Data publicação</th>
-                                    <th scope="col">Foto</th>
-                                    <th scope="col">Fonte</th>
-                                    <th scope="col">usuario_id</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Abrir</th>
                                 </tr>
@@ -60,13 +58,8 @@ const NoticiasLista = () => {
                                     <tr className="" key={noticia.id}>
                                         <td>{noticia.id}</td>
                                         <td>{noticia.manchete}</td>
-                                        <td>{noticia.conteudo}</td>
                                         <td>{noticia.palavrasChave}</td>
-                                        {/* <td>{noticia.dataEnvio}</td> */}
-                                        <td>{noticia.dataPublicacao}</td>
-                                        <td>{noticia.foto}</td>
-                                        <td>{noticia.fonte}</td>
-                                        {/* <td>{noticia.usuario_id}</td> */}
+                                        <td>{noticia.statusNoticia}</td>
                                         <td>
                                             <button onClick={() => editar(noticia.id)}
                                                 className="btn btn-sm btn-warning rounded">
