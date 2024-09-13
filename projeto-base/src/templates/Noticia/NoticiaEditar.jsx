@@ -4,7 +4,6 @@ import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
-
 const NoticiaEditar = () => {
 
     const objectValues = {
