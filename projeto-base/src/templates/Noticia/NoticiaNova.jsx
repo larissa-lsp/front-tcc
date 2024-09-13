@@ -13,10 +13,7 @@ const NoticiaNova = () => {
         manchete: "",
         conteudo: "",
         palavrasChave: "",
-        dataEnvio: "",
-        dataPublicacao: "",
         fonte: "",
-        foto: "",
     };
     const [noticia, setNoticia] = useState(objectValues);
     const [formData, setFormData] = useState({});
@@ -32,7 +29,6 @@ const NoticiaNova = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setSuccessful(false);
-        if (formData.usuario_id != undefined && formData.email != undefined && formData.texto != undefined) {
             NoticiaService.create(formData).then(
                 (response) => {
                     setMessage(response.data.message);
@@ -46,7 +42,6 @@ const NoticiaNova = () => {
                     setMessage(message);
                 }
             )
-        }
     }
 
     return (

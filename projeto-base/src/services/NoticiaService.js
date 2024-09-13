@@ -18,7 +18,6 @@ const create = data => {
     formData.append('manchete', data.manchete);
     formData.append('conteudo', data.conteudo);
     formData.append('palavrasChave', data.palavrasChave);
-    formData.append('foto', data.foto);
     formData.append('fonte', data.fonte);
     return http.mainInstance.post(API_URL + "create", formData);
 };
