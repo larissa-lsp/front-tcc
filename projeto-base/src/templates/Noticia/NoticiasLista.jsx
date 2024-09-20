@@ -3,34 +3,36 @@ import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
-import { useState } from "react";
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import NoticiaService from "../../services/NoticiaService";
 
 const NoticiasLista = () => {
 
     const navigate = useNavigate();
-
-    const goTo = () => {
-        navigate('/noticiaeditar')
-    }
+    const _dbRecords = useRef(true);
 
     const [noticias, setNoticias] = useState([]);
 
-    useEffect(() => {
-        NoticiaService.findAll().then(
-            (response) => {
-                const noticias = response.data;
-                setNoticias(noticias);
-            }
-        ).catch((error) => {
-            console.log(error);
-        })
-    }, []);
-
-    const editar = (id) => {
-        navigate(`/noticiaeditar/` + id)
+    const getId = (id) => {
+        navigate(`/noticiaeditar/${id}`)
     }
+
+    useEffect(() => {
+        if (_dbRecords.current) {
+            NoticiaService.findAll().then(
+                (response) => {
+                    const noticias = response.data;
+                    setNoticias(noticias);
+                }
+            ).catch((error) => {
+                setNoticias([]);
+                console.log(error);
+            })
+        }
+        return () => {
+            _dbRecords.current = false;
+        }
+    }, []);
 
     return (
         <div className="d-flex">
@@ -41,8 +43,19 @@ const NoticiasLista = () => {
                     title={LogoTitulo}
                     logo={logo}
                 />
+
                 <section className="m-2 p-2 shadow-lg">
-                    <div className="table-wrapper">
+                    <div className="m-2">
+                        <div className="btn btn-info position-relative fw-bold">
+                            Total de Notícias
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {noticias.length}
+                                <span className="visually-hidden">total de notícias</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div>
                         <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
@@ -55,15 +68,15 @@ const NoticiasLista = () => {
                             </thead>
                             <tbody>
                                 {noticias?.map((noticia) => (
-                                    <tr className="" key={noticia.id}>
-                                        <td>{noticia.id}</td>
+                                    <tr key={noticia.id}>
+                                        <td scope="row">{noticia.id}</td>
                                         <td>{noticia.manchete}</td>
                                         <td>{noticia.palavrasChave}</td>
                                         <td>{noticia.statusNoticia}</td>
                                         <td>
-                                            <button onClick={() => editar(noticia.id)}
-                                                className="btn btn-sm btn-warning rounded">
-                                                <i className="bi bi-envelope-open"> Abrir</i>
+                                            <button type="button" onClick={() => getId(noticia.id)}
+                                                className="btn btn-sm btn-warning">
+                                                <i className="bi bi-envelope-open me-2"></i>Abrir
                                             </button>
                                         </td>
                                     </tr>
