@@ -2,23 +2,42 @@ import { Link } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
+import LogoTitulo from '../../assets/images/LogoTitulo.png'
+import { useState } from "react";
+import { useEffect } from "react";
+import NoticiaService from "../../services/NoticiaService";
+import UsuarioService from "../../services/UsuarioService";
+import ImageUploaderModal from "../../components/ImageUploader/ImageUploaderModal";
+import { useRef } from "react";
+
 
 const NoticiaNova = () => {
+
+    const _dbRecords = useRef(true);
+
     const objectValues = {
-        usuario_id: "",
-        id: "",
-        manchete: "",
-        conteudo: "",
-        palavrasChave: "",
-        dataEnvio: "",
-        dataPublicacao: "",
-        fonte: "",
-        foto: "",
+        id: null,
+        nome: "",
+        email: "",
+        nivelAcesso: ""
     };
-    const [noticia, setNoticia] = useState(objectValues);
+
     const [formData, setFormData] = useState({});
     const [successful, setSuccessful] = useState(false);
     const [message, setMessage] = useState();
+    const [usuario, setUsuario] = useState(objectValues);
+    const [file, setFile] = useState("");
+    const [chosenImage, setChosenImage] = useState();
+
+    const currentUser = UsuarioService.getCurrentUser();
+
+    const setChosenFile = (dataFile) => {
+        setFile(dataFile);
+    }
+
+    const setImage = (dataImage) => {
+        setChosenImage(dataImage);
+    }
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -26,12 +45,26 @@ const NoticiaNova = () => {
         setFormData(formData => ({ ...formData, [name]: value }));
     }
 
-    /*
+    useEffect(() => {
+        if (_dbRecords.current) {
+            UsuarioService.findById(currentUser.id).then(
+                (response) => {
+                    const usuario = response.data;
+                    setUsuario(usuario);
+                }
+            ).catch((error) => {
+                console.log(error);
+            })
+        }
+        return () => {
+            _dbRecords.current = false;
+        }
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setSuccessful(false);
-        if (formData.usuario_id != undefined && formData.email != undefined && formData.texto != undefined) {
-            NoticiaService.create(formData).then(
+            NoticiaService.createComFoto(file, formData, currentUser.id).then(
                 (response) => {
                     setMessage(response.data.message);
                     setSuccessful(true);
@@ -44,39 +77,23 @@ const NoticiaNova = () => {
                     setMessage(message);
                 }
             )
-        }
     }
-    */
 
     return (
         <div className="d-flex">
             <Sidebar />
+            <div className="p-3 w-100">
             <Header
                     goto={'/noticia'}
                     title={LogoTitulo}
                     logo={logo}
                 />
             <section className="m-2 p-2 shadow-lg">
-                <form className="row g-3">
+                <form className="row g-3" onSubmit={handleSubmit}>
                     {!successful && (
                         <>
+
                             <div className="form-group col-md-12">
-                                <label htmlFor="usuario_id" className="col-form-label">Usuário ID</label>
-                                <input type="text" className="form-control" id="usuario_id" placeholder="ID colaborador" readonly
-                                    name="usuario_id"
-                                    value={formData.usuario_id || ""}
-                                    onChange={handleChange} />
-                            </div>
-
-                            <div className="form-group col-md-1">
-                                <label htmlFor="inputId" className="col-form-label">ID</label>
-                                <input type="text" className="form-control" id="inputId" placeholder="ID" readonly
-                                    name="id"
-                                    value={formData.id || ""}
-                                    onChange={handleChange} />
-                            </div>
-
-                            <div className="form-group col-md-11">
                                 <label htmlFor="inputManchete" className="col-form-label">Manchete:</label>
                                 <input type="text" className="form-control" id="inputManchete" placeholder="Manchete" required
                                     name="manchete"
@@ -102,23 +119,7 @@ const NoticiaNova = () => {
                                 </textarea>
                             </div>
 
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputDataEnvio" className="col-form-label">Data de envio</label>
-                                <input type="date" className="form-control" id="inputDataEnvio" placeholder="Data de envio" readonly
-                                    name="dataEnvio"
-                                    value={formData.dataEnvio || ""}
-                                    onChange={handleChange} />
-                            </div>
-
-                            <div className="form-group col-md-6">
-                                <label htmlFor="inputDataPublicacao" className="col-form-label">Data de publicação</label>
-                                <input type="date" className="form-control" id="inputDataPublicacao" placeholder="Data de publicação" readonly
-                                    name="dataPublicacao"
-                                    value={formData.dataPublicacao || ""}
-                                    onChange={handleChange} />
-                            </div>
-
-                            <div className="form-group col-md-9">
+                            <div className="form-group col-md-12">
                                 <label htmlFor="inputFonte" className="col-form-label">Fonte:</label>
                                 <input type="text" className="form-control" id="inputFonte" placeholder="" required
                                     name="fonte"
@@ -126,12 +127,11 @@ const NoticiaNova = () => {
                                     onChange={handleChange} />
                             </div>
 
-                            <div className="form-group col-md-12">
-                                <label htmlFor="inputFoto" className="col-form-label">Foto:</label>
-                                <input type="file" className="form-control-file" id="inputFoto"
-                                    name="foto"
-                                    value={formData.foto || ""}
-                                    onChange={handleChange} />
+                            <div className="col-md-12">
+                                <ImageUploaderModal
+                                    setFile={setChosenFile}
+                                    setImage={setImage} 
+                                    chosenImage={chosenImage} />
                             </div>
 
                             <div className="form-group col-md-12 text-right">
@@ -151,6 +151,7 @@ const NoticiaNova = () => {
                     )}
                 </form>
             </section>
+            </div>
         </div>
     )
 }

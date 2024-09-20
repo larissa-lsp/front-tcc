@@ -24,25 +24,25 @@ const UsuarioNovo = () => {
         setNivel(e.target.value);
     }
 */
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setSuccessful(false);
+const handleSubmit = (e) => {
+    e.preventDefault();
+    setSuccessful(false);
 
-        UsuarioService.create(formData).then(
-            (response) => {
-                setMessage(response.data.message);
-                setSuccessful(true);
-                /*window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth'
-                })*/
-            }, (error) => {
-                const message = error.response.data.message;
-                setMessage(message);
-            }
-        )
-    }
-
+    UsuarioService.create(formData).then(
+        (response) => {
+            setMessage(response.data.message);
+            setSuccessful(true);
+            /*window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+            })*/
+        }, (error) => {
+            const message = error.response.data.message;
+            setMessage(message);
+        }
+    )
+}
+    
     return (
         <div className="d-flex">
             <Sidebar />
@@ -73,8 +73,10 @@ const UsuarioNovo = () => {
 
                                 <div className="col-md-2">
                                     <label htmlFor="inputAcesso" className="form-label mb-1 fw-bold">Acesso:</label>
-                                    <select id="inputAcesso" className="form-select" name="nivelAcesso"
-                                        defaultValue={''} onChange={(e) => handleChange(e)}>
+                                    <select id="inputAcesso" className="form-select" 
+                                        name="nivelAcesso"
+                                        defaultValue={''}
+                                        onChange={(e) => handleChange(e)}>
 
                                         <option value={''} disabled>
                                             Nível de Acesso...

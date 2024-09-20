@@ -7,12 +7,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import NoticiaService from "../../services/NoticiaService";
 
-const NoticiasLista = () => {
+const HistoricoNoticia = () => {
 
     const navigate = useNavigate();
 
     const goTo = () => {
-        navigate('/noticiaeditar')
+        navigate('/historiconoticia')
     }
 
     const [noticias, setNoticias] = useState([]);
@@ -37,7 +37,7 @@ const NoticiasLista = () => {
             <Sidebar />
             <div className="p-3 w-100">
                 <Header
-                    goto={'/noticia'}
+                    goto={'/historiconoticia'}
                     title={LogoTitulo}
                     logo={logo}
                 />
@@ -63,7 +63,7 @@ const NoticiasLista = () => {
                                         <td>
                                             <button onClick={() => editar(noticia.id)}
                                                 className="btn btn-sm btn-warning rounded">
-                                                <i className="bi bi-envelope-open"> Abrir</i>
+                                                <i className="bi bi-envelope-open"> Ver Histórico</i>
                                             </button>
                                         </td>
                                     </tr>
@@ -77,4 +77,4 @@ const NoticiasLista = () => {
     )
 }
 
-export default NoticiasLista
+export default HistoricoNoticia
