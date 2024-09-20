@@ -13,13 +13,19 @@ const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));
 };
 
-const create = data => {
+const createComFoto = (file, data, id) => {
     const formData = new FormData();
+    formData.append('file', file);
     formData.append('manchete', data.manchete);
     formData.append('conteudo', data.conteudo);
     formData.append('palavrasChave', data.palavrasChave);
     formData.append('fonte', data.fonte);
-    return http.mainInstance.post(API_URL + "create", formData);
+
+    for (const key of formData.entries()) {
+        console.log(key[0] + ', ' + key[1]);
+    }
+
+    return http.multipartInstance.post(API_URL + `createComFoto/${id}`, formData);
 };
 
 const update = (id, data) => {
@@ -34,9 +40,9 @@ const NoticiaService = {
     findAll,
     findById,
     getCurrentUser,
-    create,
+    createComFoto,
     update,
     inativar,
-}
+};
 
 export default NoticiaService;

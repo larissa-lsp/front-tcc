@@ -22,6 +22,7 @@ import Noticia from "../templates/Noticia/Noticia"
 import NoticiaEditar from "../templates/Noticia/NoticiaEditar"
 import NoticiaNova from "../templates/Noticia/NoticiaNova"
 import NoticiasLista from "../templates/Noticia/NoticiasLista"
+import HistoricoNoticia from "../templates/Noticia/HistoricoNoticia"
 
 
 const AppRoutes = () => {
@@ -49,7 +50,7 @@ const AppRoutes = () => {
         <Route path="/noticiaslista" element={<NoticiasLista />} />
         <Route path="/noticianova" element={<NoticiaNova />} />
         <Route path="/noticiaeditar/:id" element={<NoticiaEditar />} />
-
+        <Route path="/historiconoticia" element={<HistoricoNoticia />} />
 
       </Routes>
     </div>
