@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from '../../assets/images/IconeLogo.png';
+import logo from '../../assets/images/grupo-imgLogin.png';
 import UsuarioService from "../../services/UsuarioService";
 import './Login.css';
 
@@ -41,7 +41,7 @@ const Login = () => {
                     navigate("/home");
                 } else if (user.statusUsuario == 'TROCAR_SENHA') {
                     navigate(`/newpass/` + user.id);
-                    //window.location.reload(); ordnael@email.com.br
+                    //window.location.reload(); ordnael@email.com.br/
                 }
 
             },
@@ -60,45 +60,57 @@ const Login = () => {
     };
 
     return (
-        <div className="container">
-            <form action="" className="login-form"  onSubmit={handleSubmit}>
-                <div className="login-logo">
-                    <img src={logo} alt="logo"/>
+
+        <section className="containerCad">
+            <div className="content first-content">
+
+                <div className="row">
+                    <div className="main">
+                        <h2 className="title-1">Bem-vindo, colaborador!</h2> <br /> <br />
+
+                        <form action="" className="form-login">
+                            <label htmlFor="email" >Email:</label>
+                            <input type="email" id="email" className="input" required maxlength="50"
+                                name="email"
+                                value={formData.email || ""}
+                                onChange={handleChange} /> <br />
+
+
+                            <label htmlFor="password">Senha:</label>
+                            <input type="password" id="password" className="input" required maxlength="50"
+                                name="senha"
+                                value={formData.senha || ""}
+                                onChange={handleChange} /> <br /><br />
+
+                            <div className="containerBtn">
+                                <p>Esqueceu a senha?
+                                    <Link to={'/forgotpass'}> Clique aqui.</Link>
+                                </p>
+                            </div>
+                            <div className="text-center p-2 rounded-2">
+                                {message && (
+                                    <div className="fw-bold fs-5 text-danger">
+                                        <span>{message}</span>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="containerBtn">
+                                <button className="btn" type="button" onClick={backto}>Cancelar</button>
+                                <button className="btn" type="submit">Entrar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <aside className="side">
+                        <h2 className="title-2">É bom tê-lo conosco!</h2> <br />
+                        <img src={logo} alt="img-login" width="60%" /> <br />
+                        <p className="description-primary">Responsabilidade com a verdade é o ponto crucial</p>
+                    </aside>
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="email" className="form-label mb-0 fw-bold">Email:</label>
-                    <input type="email" id="email" className="form-control text-center fw-medium shadow" 
-                        name="email"
-                        value={formData.email || ""}
-                        onChange={handleChange} />
-                </div>
-                <div>
-                    <label htmlFor="password" className="form-label mb-0 fw-bold">Senha:</label>
-                    <input type="password" id="password" className="form-control text-center fw-medium shadow" 
-                        name="senha"
-                        value={formData.senha || ""}
-                        onChange={handleChange} />
-                </div>
-                <div className="d-flex flex-row-reverse mt-1">
-                    <p className="fw-bold fst-italic opacity-75 me-1">Esqueceu a senha?
-                        <Link to={'/forgotpass'}> Clique aqui.</Link>
-                    </p>
-                </div>
-                <div className="text-center p-2 rounded-2">
-                    {message && (
-                        <div className="fw-bold fs-5 text-danger">
-                            <span>{message}</span>
-                        </div>
-                    )}
-                </div>
-                <div className="d-flex justify-content-around mb-3 mt-2">
-                    <button className="btn btn-warning fw-medium shadow" type="button"
-                        onClick={backto}>Cancelar</button>
-                    <button className="btn btn-success fw-medium shadow" type="submit">
-                        Entrar</button>
-                </div>
-            </form>
-        </div>
+            </div>
+        </section>
+
     )
 }
 
