@@ -45,23 +45,16 @@ const NoticiasLista = () => {
                 />
 
                 <section className="m-2 p-2 shadow-lg">
-                    <div className="m-2">
-                        <div className="btn btn-info position-relative fw-bold">
-                            Total de Notícias
-                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                {noticias.length}
-                                <span className="visually-hidden">total de notícias</span>
-                            </span>
-                        </div>
-                    </div>
 
                     <div>
                         <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col">ID</th>
+                                    <th scope="col"> ID </th>
                                     <th scope="col">Manchete</th>
                                     <th scope="col">Palavras-chave</th>
+                                    <th scope="col">Data Envio</th>
+                                    <th scope="col">Data Publicação</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Abrir</th>
                                 </tr>
@@ -72,6 +65,8 @@ const NoticiasLista = () => {
                                         <td scope="row">{noticia.id}</td>
                                         <td>{noticia.manchete}</td>
                                         <td>{noticia.palavrasChave}</td>
+                                        <td>{noticia.dataEnvio}</td>
+                                        <td>{noticia.dataPublicacao}</td>
                                         <td>{noticia.statusNoticia}</td>
                                         <td>
                                             <button type="button" onClick={() => getId(noticia.id)}

@@ -59,7 +59,7 @@ const NoticiaNova = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setSuccessful(false);
-        NoticiaService.createComFoto(file, formData, currentUser.id).then(
+        NoticiaService.createComFoto(file, formData, currentUser.email).then(
             (response) => {
                 setMessage(response.data.message);
                 setSuccessful(true);

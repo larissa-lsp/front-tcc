@@ -161,8 +161,8 @@ const NoticiaEditar = () => {
                                 <div className="col-md-12 text-center">
                                     <img className="shadow-lg" src={noticia.foto ? 'data:image/jpeg;base64,' + noticia.foto : logo} alt="..." />
                                 </div>
-
-                                <div className="col-md-12">
+                                
+                                <div className="col-md-4">
                                     <ImageUploaderModal
                                         setFile={setChosenFile}
                                         setImage={setImage}
@@ -170,9 +170,15 @@ const NoticiaEditar = () => {
                                 </div>
 
 
-                                <div className="col-12">
+                                <div className="col-4">
                                     <button type="submit" className="btn btn-primary">
                                         Gravar
+                                    </button>
+                                </div>
+
+                                <div className="col-4">
+                                    <button type="submit" className="btn btn-primary">
+                                        Publicar
                                     </button>
                                 </div>
                             </>
