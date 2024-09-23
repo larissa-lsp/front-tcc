@@ -68,16 +68,27 @@ const Login = () => {
                     <div className="main">
                         <h2 className="title-1">Bem-vindo, colaborador!</h2> <br /> <br />
 
+<<<<<<< HEAD
                         <form action="" className="form-login" onSubmit={handleSubmit}>
                             <label htmlFor="email" className="mb-1 fw-bold">Email:</label>
                             <input type="email" id="email" className="input" required maxLength="50"
+=======
+                        <form action="" className="form-login">
+                            <label htmlFor="email" >Email:</label>
+                            <input type="email" id="email" className="input" required maxlength="50"
+>>>>>>> eff4e14b4aa1c6c5000068e5faec60c35818bcd3
                                 name="email"
                                 value={formData.email || ""}
                                 onChange={handleChange} /> <br />
 
 
+<<<<<<< HEAD
                             <label htmlFor="password" className="mb-1 fw-bold">Senha:</label>
                             <input type="password" id="password" className="input" required maxLength="50"
+=======
+                            <label htmlFor="password">Senha:</label>
+                            <input type="password" id="password" className="input" required maxlength="50"
+>>>>>>> eff4e14b4aa1c6c5000068e5faec60c35818bcd3
                                 name="senha"
                                 value={formData.senha || ""}
                                 onChange={handleChange} /> <br /><br />
