@@ -46,21 +46,14 @@ p {
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 .btn1 {
   color: #fff;
   font-weight: bold;
   font-size: 16px;
   border: none;
-  background-color: #0062B2;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
   cursor: pointer;
 }
 
-=======
->>>>>>> eff4e14b4aa1c6c5000068e5faec60c35818bcd3
 .description-primary {
   color: #fff;
   font-weight: bold;
