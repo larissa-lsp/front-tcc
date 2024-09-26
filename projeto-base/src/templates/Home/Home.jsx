@@ -43,10 +43,6 @@ const Home = () => {
                             <ImageUploader
                                 setFile={setFile} />
                         */}
-                        <ImageUploaderModal
-                            setFile={setFile}
-                            setImage={setImage}
-                            chosenImage={chosenImage} />
                     </div>
                 </div> :
                 <AcessoNegado />
