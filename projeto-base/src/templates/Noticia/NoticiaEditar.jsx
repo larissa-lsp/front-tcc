@@ -3,9 +3,7 @@ import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
-import { useState } from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import NoticiaService from "../../services/NoticiaService";
 import ImageUploaderModal from "../../components/ImageUploader/ImageUploaderModal";
 import UsuarioService from "../../services/UsuarioService";
@@ -13,6 +11,7 @@ import UsuarioService from "../../services/UsuarioService";
 const NoticiaEditar = () => {
 
     const { id } = useParams();
+    const _dbRecords = useRef(true);
 
     const initialObjectState = {
         id: null,
@@ -23,10 +22,11 @@ const NoticiaEditar = () => {
         dataPublicacao: "",
         fonte: "",
         foto: null,
+        statusNoticia: ""
 
     };
 
-    const [noticia, setNoticia] = useState(objectValues);
+    const [noticia, setNoticia] = useState(initialObjectState);
     const [message, setMessage] = useState();
     const [successful, setSuccessful] = useState(false);
     const [file, setFile] = useState("");
@@ -35,15 +35,22 @@ const NoticiaEditar = () => {
     const currentUser = UsuarioService.getCurrentUser();
 
     useEffect(() => {
-        NoticiaService.findById(id).then(
-            (response) => {
-                const noticia = response.data;
-                setNoticia(noticia);
-            }
-        ).catch((error) => {
-            console.log(error);
-        })
-    }, []);
+        if (_dbRecords.current) {
+            NoticiaService.findById(id)
+                .then(response => {
+                    const noticia = response.data;
+                    setNoticia(noticia);
+                    console.log(noticia);
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        } return () => {
+            _dbRecords.current = false;
+        }
+    }, [id]);
+
+
 
     const setChosenFile = (dataFile) => {
         setFile(dataFile);
@@ -100,54 +107,62 @@ const NoticiaEditar = () => {
                             <>
 
                                 <div className="col-md-1">
-                                    <label htmlFor="inputId" className="form-label">ID</label>
+                                    <label htmlFor="inputId" className="form-label mb-1 fw-bold mb-1 fw-bold">ID</label>
                                     <input type="text" className="form-control" id="inputId" readOnly
                                         defaultValue={noticia.id} />
                                 </div>
 
                                 <div className="col-md-11">
-                                    <label htmlFor="inputManchete" className="form-label">Manchete:</label>
+                                    <label htmlFor="inputManchete" className="form-label mb-1 fw-bold mb-1 fw-bold">Manchete:</label>
                                     <input type="text" className="form-control" id="inputManchete"
                                         defaultValue={noticia.manchete} />
+
                                 </div>
 
                                 <div className="col-md-12">
-                                    <label htmlFor="inputConteudo" className="form-label">Conteúdo:</label>
+                                    <label htmlFor="inputConteudo" className="form-label mb-1 fw-bold mb-1 fw-bold">Conteúdo:</label>
                                     <textarea rows={20} className="form-control" id="inputConteudo"
                                         defaultValue={noticia.conteudo} >
+
                                     </textarea>
                                 </div>
 
                                 <div className="col-md-12">
-                                    <label htmlFor="inputPalavrasChave" className="form-label">Palavras-chave:</label>
+                                    <label htmlFor="inputPalavrasChave" className="form-label mb-1 fw-bold mb-1 fw-bold">Palavras-chave:</label>
                                     <textarea rows={2} className="form-control" id="inputPalavrasChave"
                                         defaultValue={noticia.palavrasChave} >
+
                                     </textarea>
                                 </div>
 
                                 {/*
                                 <div className="col-md-6">
-                                    <label htmlFor="inputDataEnvio" className="form-label">Data de envio</label>
-                                    <input type="date" className="form-control" id="inputDataEnvio" />
+                                    <label htmlFor="inputDataEnvio" className="form-label mb-1 fw-bold mb-1 fw-bold">Data de envio</label>
+                                    <input type="date" className="form-control" id="inputDataEnvio"
+                                        defaultValue={noticia.dataEnvio} />
+
                                 </div>
 
                                 <div className="col-md-6">
-                                    <label htmlFor="inputDataPublicacao" className="form-label">Data de publicação</label>
-                                    <input type="date" className="form-control" id="inputDataPublicacao" />
+                                    <label htmlFor="inputDataPublicacao" className="form-label mb-1 fw-bold mb-1 fw-bold">Data de publicação</label>
+                                    <input type="date" className="form-control" id="inputDataPublicacao" 
+                                        defaultValue={noticia.dataPublicacao} />
+
                                 </div>
                                 */}
 
                                 <div className="form-group col-md-9">
-                                    <label htmlFor="inputFonte" className="form-label">Fonte:</label>
+                                    <label htmlFor="inputFonte" className="form-label mb-1 fw-bold mb-1 fw-bold">Fonte:</label>
                                     <input type="text" className="form-control" id="inputFonte"
                                         defaultValue={noticia.fonte} />
+
                                 </div>
 
                                 <div className="col-md-12 text-center">
                                     <img className="shadow-lg" src={noticia.foto ? 'data:image/jpeg;base64,' + noticia.foto : logo} alt="..." />
                                 </div>
-
-                                <div className="col-md-12">
+                                
+                                <div className="col-md-4">
                                     <ImageUploaderModal
                                         setFile={setChosenFile}
                                         setImage={setImage}
@@ -155,9 +170,15 @@ const NoticiaEditar = () => {
                                 </div>
 
 
-                                <div className="col-12">
+                                <div className="col-4">
                                     <button type="submit" className="btn btn-primary">
                                         Gravar
+                                    </button>
+                                </div>
+
+                                <div className="col-4">
+                                    <button type="submit" className="btn btn-primary">
+                                        Publicar
                                     </button>
                                 </div>
                             </>

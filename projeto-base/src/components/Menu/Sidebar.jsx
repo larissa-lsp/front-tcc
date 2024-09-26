@@ -30,7 +30,7 @@ const Sidebar = () => {
                         </div>
 
                         <div>
-                            <button className="btn btn-sm btn-warning py-1 px-2 mx-1 fw-bold h5 text-danger rounded shadow">
+                            <button className="btn btn-sm btn-danger py-1 px-2 mx-1 fw-bold h5 rounded shadow">
                                 <i className="bi bi-box-arrow-left"></i> Sair
                             </button>
                             <button type="button" onClick={() => editar(currentUser.id)}

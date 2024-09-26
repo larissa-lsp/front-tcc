@@ -13,7 +13,7 @@ const getCurrentUser = () => {
     return JSON.parse(localStorage.getItem("user"));
 };
 
-const createComFoto = (file, data, id) => {
+const createComFoto = (file, data, email) => {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('manchete', data.manchete);
@@ -25,7 +25,7 @@ const createComFoto = (file, data, id) => {
         console.log(key[0] + ', ' + key[1]);
     }
 
-    return http.multipartInstance.post(API_URL + `createComFoto/${id}`, formData);
+    return http.multipartInstance.post(API_URL + `createComFoto/${email}`, formData);
 };
 
 const update = (id, data) => {
