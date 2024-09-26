@@ -27,11 +27,14 @@ const NoticiaEditar = () => {
     };
 
     const [noticia, setNoticia] = useState(initialObjectState);
+
     const [message, setMessage] = useState();
     const [successful, setSuccessful] = useState(false);
+
     const [file, setFile] = useState("");
     const [formData, setFormData] = useState({});
     const [chosenImage, setChosenImage] = useState();
+
     const currentUser = UsuarioService.getCurrentUser();
 
     useEffect(() => {
@@ -49,7 +52,6 @@ const NoticiaEditar = () => {
             _dbRecords.current = false;
         }
     }, [id]);
-
 
 
     const setChosenFile = (dataFile) => {
@@ -109,28 +111,34 @@ const NoticiaEditar = () => {
                                 <div className="col-md-1">
                                     <label htmlFor="inputId" className="form-label mb-1 fw-bold mb-1 fw-bold">ID</label>
                                     <input type="text" className="form-control" id="inputId" readOnly
+                                        name="id"
                                         defaultValue={noticia.id} />
                                 </div>
 
                                 <div className="col-md-11">
                                     <label htmlFor="inputManchete" className="form-label mb-1 fw-bold mb-1 fw-bold">Manchete:</label>
                                     <input type="text" className="form-control" id="inputManchete"
-                                        defaultValue={noticia.manchete} />
+                                        name="manchete"
+                                        defaultValue={noticia.manchete}
+                                        onChange={handleChange} />
 
                                 </div>
 
                                 <div className="col-md-12">
                                     <label htmlFor="inputConteudo" className="form-label mb-1 fw-bold mb-1 fw-bold">Conteúdo:</label>
                                     <textarea rows={20} className="form-control" id="inputConteudo"
-                                        defaultValue={noticia.conteudo} >
-
+                                        name="conteudo"
+                                        defaultValue={noticia.conteudo}
+                                        onChange={handleChange} >
                                     </textarea>
                                 </div>
 
                                 <div className="col-md-12">
                                     <label htmlFor="inputPalavrasChave" className="form-label mb-1 fw-bold mb-1 fw-bold">Palavras-chave:</label>
                                     <textarea rows={2} className="form-control" id="inputPalavrasChave"
-                                        defaultValue={noticia.palavrasChave} >
+                                        name="palavrasChave"
+                                        defaultValue={noticia.palavrasChave}
+                                        onChange={handleChange} >
 
                                     </textarea>
                                 </div>
@@ -154,8 +162,9 @@ const NoticiaEditar = () => {
                                 <div className="form-group col-md-9">
                                     <label htmlFor="inputFonte" className="form-label mb-1 fw-bold mb-1 fw-bold">Fonte:</label>
                                     <input type="text" className="form-control" id="inputFonte"
-                                        defaultValue={noticia.fonte} />
-
+                                        name="fonte"
+                                        defaultValue={noticia.fonte} 
+                                        onChange={handleChange} />
                                 </div>
 
                                 <div className="col-md-12 text-center">
