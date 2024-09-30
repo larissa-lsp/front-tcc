@@ -1,0 +1,17 @@
+.footer{
+    background-color: #0062b2;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    align-items:center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    list-style-type: none;
+}
+
+.footer:visited{
+    color:#fff
+}

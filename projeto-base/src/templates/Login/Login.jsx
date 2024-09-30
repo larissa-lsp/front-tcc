@@ -84,7 +84,7 @@ const Login = () => {
                                 onChange={handleChange} /> <br /><br />
 
                             <div className="containerBtn">
-                                <p>Esqueceu a senha?
+                                <p className="forgotPass">Esqueceu a senha?
                                     <Link to={'/forgotpass'}> Clique aqui.</Link>
                                 </p>
                             </div>

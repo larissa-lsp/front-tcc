@@ -4,36 +4,3 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
-
-.footer {
-    font-size: 15px;
-    background-color: #0062B2;
-    padding: 20px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(3, 2fr);
-}
-
-.footer div {
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer a {
-    color: #fff;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.footer-direitos {
-    flex-direction: column;
-    justify-content: left;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.redes-sociais {
-    display: flex;
-}

@@ -1,41 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Header from "../../components/Header/Header"
-import logo from '../../assets/images/home.png'
-import InstagramIcon from '../../assets/images/instagram.png'
-import LinkedInIcon from '../../assets/images/linkedin.png'
-import FacebookIcon from '../../assets/images/facebook.png'
-import './HomeNoticia.css';
-import LogoTitulo from '../../assets/images/LogoTitulo.png'
-
+import Footer from "../Footer/Footer"
+import Card from '../../templates/CardNoticia/CardNoticia'
+import Header from '../HeaderNoticia/HeaderNoticia'
 
 const HomeNoticia = () => {
     return (
         <div>
-            <Header
-                goto={'/noticia'}
-                title={LogoTitulo}
-                logo={logo}
-                />
+                <Header />
 
-           <footer className="footer">
-                <div className="footer-direitos">
-                    <p>Todos direitos reservados Portal360 Ltda.</p>
-                </div>
+                <Card manchete="Manchete" texto="
+                Texto da manchete mt legal 
+                pipipopopopipipopopo
+                pipipopopopipipopopo
+                pipipopopopipipopopo
+                pipipopopopipipopopo
+                pipipopopopipipopopo"/>
 
-                <Link to={'/login'} className="acesso-restrito">
-                    <p>Acesso Restrito</p>
-                </Link>
-
-                <div className="redes-sociais">
-                    <ul>
-                        <h2>Redes sociais</h2>
-                        <li><img src={InstagramIcon} alt="Instagram" width="5%" /> Instagram</li>
-                        <li><img src={LinkedInIcon} alt="Linkedin" width="5%" /> Linkedin</li>
-                        <li><img src={FacebookIcon} alt="Facebook" width="5%" /> Facebook</li>
-                    </ul>
-                </div>
-            </footer> 
+            <Footer />
         </div>
             
     );
