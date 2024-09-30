@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from '../../assets/images/grupo-imgLogin.png';
 import UsuarioService from "../../services/UsuarioService";
 import './Login.css';
+import IconeLogo from '../../assets/images/IconeLogo.png'
 
 const Login = () => {
 
@@ -66,19 +67,22 @@ const Login = () => {
 
                 <div className="row">
                     <div className="main">
+                        <a href="/">
+                        <img src={IconeLogo} alt="IconeLogo" />
+                        </a>
                         <h2 className="title-1">Bem-vindo, colaborador!</h2> <br /> <br />
 
                         <form action="" className="form-login" onSubmit={handleSubmit}>
                 
-                            <label htmlFor="email" className="mb-1 fw-bold">Email:</label>
-                            <input type="email" id="email" className="input" required maxLength="50"                               
+                            <label htmlFor="email" className="mb-1 fw-bold"></label>
+                            <input placeholder="Email" type="email" id="email" className="input" required maxLength="50"                               
                                 name="email"
                                 value={formData.email || ""}
                                 onChange={handleChange} /> <br />
 
 
-                            <label htmlFor="password" className="mb-1 fw-bold">Senha:</label>
-                            <input type="password" id="password" className="input" required maxLength="50" 
+                            <label htmlFor="password" className="mb-1 fw-bold"></label>
+                            <input placeholder="Senha" type="password" id="password" className="input" required maxLength="50" 
                                 name="senha"
                                 value={formData.senha || ""}
                                 onChange={handleChange} /> <br /><br />
@@ -97,7 +101,6 @@ const Login = () => {
                             </div>
 
                             <div className="containerBtn">
-                                <button className="btn" type="button" onClick={backto}>Cancelar</button>
                                 <button className="btn" type="submit">Entrar</button>
                             </div>
                         </form>

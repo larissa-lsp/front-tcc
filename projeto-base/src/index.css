@@ -5,3 +5,9 @@
     max-height: 69vh; 
     overflow-y: auto; 
 }
+
+body{
+    background-color: #CAE9FF;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /*Essa fonte só esta aqui porque resolve um erro, não achei fonte original ainda*/
+}

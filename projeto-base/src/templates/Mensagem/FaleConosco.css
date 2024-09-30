@@ -5,3 +5,35 @@
     margin: 10px;
     background-color: #CAE9FF;
 }
+.btn {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0062B2;
+    padding: 20px;
+    padding-left: 65px;
+    padding-right: 65px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.maior{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem{
+    background-color: #0062B2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.forms{
+    
+    display: flex;
+    flex-wrap: wrap;
+  }

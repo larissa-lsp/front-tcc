@@ -105,3 +105,9 @@ p {
   flex: 40%;
   background-color: #0062B2;
 }
+
+.logo {
+  height: 70%;
+  width: 100%;
+  text-align: center;
+}
