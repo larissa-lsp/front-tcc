@@ -83,7 +83,7 @@ const FaleConosco = () => {
                         </div>
                     </>
                 )}
-                {/* {{message && (
+                {message && (
                     <div className="m-1">
                         <div className={
                             "text-center h4 fst-italic py-4 rounded-2 border border-5 " + (successful ? "border-success" : "border-danger")
@@ -91,7 +91,7 @@ const FaleConosco = () => {
                             {message}
                         </div>
                     </div>
-                    )}*/}
+                )}
             </form>
         </div>
     )
