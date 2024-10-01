@@ -97,15 +97,6 @@ const NoticiaNova = () => {
                                 </div>
 
                                 <div className="col-md-12">
-                                    <label htmlFor="inputConteudo" className="col-form-label">Conteúdo:</label>
-                                    <textarea className="form-control" id="inputConteudo" rows="20" required
-                                        name="conteudo"
-                                        value={formData.conteudo || ""}
-                                        onChange={handleChange} >
-                                    </textarea>
-                                </div>
-
-                                <div className="col-md-12">
                                     <label htmlFor="inputPalavrasChave" className="col-form-label">Palavras-chave:</label>
                                     <textarea className="form-control" id="inputPalavrasChave" rows="2" required
                                         name="palavrasChave"
@@ -120,6 +111,15 @@ const NoticiaNova = () => {
                                         name="fonte"
                                         value={formData.fonte || ""}
                                         onChange={handleChange} />
+                                </div>
+
+                                <div className="col-md-12">
+                                    <label htmlFor="inputConteudo" className="col-form-label">Conteúdo:</label>
+                                    <textarea className="form-control" id="inputConteudo" rows="20" required
+                                        name="conteudo"
+                                        value={formData.conteudo || ""}
+                                        onChange={handleChange} >
+                                    </textarea>
                                 </div>
 
                                 <div className="col-md-12">

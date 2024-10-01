@@ -5,8 +5,6 @@ import logo from '../../assets/images/home.png';
 import UsuarioService from "../../services/UsuarioService"
 import AcessoNegado from "./AcessoNegado"
 import { useState } from "react"
-import ImageUploader from "../../components/ImageUploader/ImageUploader"
-import ImageUploaderModal from "../../components/ImageUploader/ImageUploaderModal"
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
 
 const Home = () => {
@@ -39,14 +37,6 @@ const Home = () => {
                             logo={logo}
                         />
                         <h2 className="user-nome fw-bold fst-italic">Bem-vindo(a), {currentUser.nome}!</h2>
-                        {/*
-                            <ImageUploader
-                                setFile={setFile} />
-                        */}
-                        <ImageUploaderModal
-                            setFile={setFile}
-                            setImage={setImage}
-                            chosenImage={chosenImage} />
                     </div>
                 </div> :
                 <AcessoNegado />

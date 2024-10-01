@@ -1,17 +1,18 @@
 import '../HeaderNoticia/HeaderNoticia.css'
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
+import { Link } from 'react-router-dom';
 
 
-function HeaderNoticia(){
-    return(
+function HeaderNoticia() {
+    return (
         <div className="header">
-        <img src={LogoTitulo} alt="Portal360" className="imgTitulo"/>
+            <img src={LogoTitulo} alt="Portal360" className="imgTitulo" />
 
-        <nav className="navBar">
-            <a href="#">Início</a>
-            <a href="#">Sobre Nós</a>
-            <a href="#">Fale Conosco</a>
-        </nav>
+            <nav className="navBar">
+                <Link className="nav-link" to={'/'}>Início</Link>
+                <Link className="nav-link" to={'/sobrenos'}>Sobre nós</Link>
+                <Link className="nav-link" to={'/faleconosco'}>Fale Conosco</Link>
+            </nav>
 
         </div>
     );

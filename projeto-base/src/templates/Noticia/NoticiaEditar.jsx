@@ -65,21 +65,23 @@ const NoticiaEditar = () => {
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        setFormData(formData => ({ ...formData, [name]: value }));
+        setNoticia(noticia => ({ ...noticia, [name]: value }));
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         setMessage("");
         setSuccessful(false);
 
-        NoticiaService.createComFoto(file, formData, currentUser.id).then(
+        NoticiaService.alterar(file, id, noticia).then(
             (response) => {
                 setMessage(response.data.message);
                 setSuccessful(true);
-                /*window.scrollTo({
+                console.log(response.data.message)
+                window.scrollTo({
                   top: 0,
                   behavior: 'smooth'
-                })*/
+                })
             }, (error) => {
                 const resMessage =
                     (error.response &&
@@ -109,7 +111,7 @@ const NoticiaEditar = () => {
                             <>
 
                                 <div className="col-md-1">
-                                    <label htmlFor="inputId" className="form-label mb-1 fw-bold mb-1 fw-bold">ID</label>
+                                    <label htmlFor="inputId" className="form-label mb-1 fw-bold mb-1 fw-bold">ID:</label>
                                     <input type="text" className="form-control" id="inputId" readOnly
                                         name="id"
                                         defaultValue={noticia.id} />
@@ -122,15 +124,6 @@ const NoticiaEditar = () => {
                                         defaultValue={noticia.manchete}
                                         onChange={handleChange} />
 
-                                </div>
-
-                                <div className="col-md-12">
-                                    <label htmlFor="inputConteudo" className="form-label mb-1 fw-bold mb-1 fw-bold">Conteúdo:</label>
-                                    <textarea rows={20} className="form-control" id="inputConteudo"
-                                        name="conteudo"
-                                        defaultValue={noticia.conteudo}
-                                        onChange={handleChange} >
-                                    </textarea>
                                 </div>
 
                                 <div className="col-md-12">
@@ -159,7 +152,7 @@ const NoticiaEditar = () => {
                                 </div>
                                 */}
 
-                                <div className="form-group col-md-9">
+                                <div className="form-group col-md-12">
                                     <label htmlFor="inputFonte" className="form-label mb-1 fw-bold mb-1 fw-bold">Fonte:</label>
                                     <input type="text" className="form-control" id="inputFonte"
                                         name="fonte"
@@ -167,25 +160,29 @@ const NoticiaEditar = () => {
                                         onChange={handleChange} />
                                 </div>
 
+                                <div className="col-md-12">
+                                    <label htmlFor="inputConteudo" className="form-label mb-1 fw-bold mb-1 fw-bold">Conteúdo:</label>
+                                    <textarea rows={20} className="form-control" id="inputConteudo"
+                                        name="conteudo"
+                                        defaultValue={noticia.conteudo}
+                                        onChange={handleChange} >
+                                    </textarea>
+                                </div>
+
                                 <div className="col-md-12 text-center">
                                     <img className="shadow-lg" src={noticia.foto ? 'data:image/jpeg;base64,' + noticia.foto : logo} alt="..." />
                                 </div>
                                 
-                                <div className="col-md-4">
+                                <div className="col-md-12 d-flex justify-content-around align-items-center">
                                     <ImageUploaderModal
                                         setFile={setChosenFile}
                                         setImage={setImage}
                                         chosenImage={chosenImage} />
-                                </div>
-
-
-                                <div className="col-4">
-                                    <button type="submit" className="btn btn-primary">
+                             
+                                    <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
                                         Gravar
                                     </button>
-                                </div>
-
-                                <div className="col-4">
+                              
                                     <button type="submit" className="btn btn-primary">
                                         Publicar
                                     </button>
