@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    flex: 40%;
+    flex: 80%;
     background-color: #0062B2;
     }
 
@@ -52,8 +52,19 @@
     border: none;
     border-radius: 10px;
     background-color: #0062B2;
-    padding: 15px;
-    padding-left: 65px;
-    padding-right: 65px;
-    cursor: pointer;
+    width: 400px;
+    height: 50px;
+    align-items: flex;
+    
   }
+
+  .description-contact{
+    color: #000;
+    font-size: 25px;
+    text-align: center;
+}
+
+.description-contact-1{
+  font-size: 45px;
+  color: #0062B2;
+}

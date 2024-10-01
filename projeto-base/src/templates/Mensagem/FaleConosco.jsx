@@ -3,6 +3,7 @@ import MensagemService from "../../services/MensagemService"
 import logo from '../../assets/images/IconeLogo.png';
 import './FaleConosco.css'
 import faleconos from '../../assets/images/faleConoscoIMG.png'
+import IconeLogo from '../../assets/images/IconeLogo.png'
 
 
 const FaleConosco = () => {
@@ -49,7 +50,11 @@ const FaleConosco = () => {
             <div className="maior">
                 <div className="forms">
                     <form className="form-fale row g-2 rounded-2 shadow" onSubmit={handleSubmit}>
-                        <p className="title-1">Fale Conosco</p>
+                    <a href="/">
+                        <img src={IconeLogo} alt="IconeLogo" />
+                        </a><br /><br />
+                        <h1 className="description-contact-1">Fale Conosco</h1>
+                        <p className="description-contact">Complete o formulário para enviar sua mensagem para nós.</p>
                         {!successful && (
                             <>
                                 <div className="col-md-12 mb-3">
@@ -57,7 +62,7 @@ const FaleConosco = () => {
                                     <input placeholder="Insira seu nome:" type="text" className="input"  id="inputEmissor" required
                                         name="emissor"
                                         value={formData.emissor || ""}
-                                        onChange={handleChange} /><br /><br />
+                                        onChange={handleChange} /><br />
                                 </div>
 
                                 <div className="col-md-12 mb-3">
@@ -65,18 +70,21 @@ const FaleConosco = () => {
                                     <input placeholder=" Insira sua senha" type="text" className="input"  id="inputTelefone"
                                         name="telefone"
                                         value={formData.telefone || ""}
-                                        onChange={handleChange} /><br /><br />
+                                        onChange={handleChange} /><br />
                                 </div>
                                 <div className="col-md-12 mb-1">
                                     <label htmlFor="inputTexto" className="form-label mb-1 fw-bold">Mensagem:</label><br />
                                     <textarea placeholder=" Insira sua mensagem" rows={5} className="input"      id="inputTexto" required
                                         name="texto"
                                         value={formData.texto || ""}
-                                        onChange={handleChange}  ><br /><br />
+                                        onChange={handleChange}  ><br />
                                     </textarea>
+                                </div> 
+                                <div className="col-md-12 mb-1"><br />
+                                <button className="mensagem-btn" type="submit">Enviar</button>
                                 </div>
 
-                                <button className="mensagem-btn">Enviar</button>
+                                
                             </>
                         )}
                         {/* {{message && (
