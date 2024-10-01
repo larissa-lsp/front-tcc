@@ -2,6 +2,7 @@ import { useState } from "react"
 import MensagemService from "../../services/MensagemService"
 import logo from '../../assets/images/IconeLogo.png';
 import './FaleConosco.css'
+import faleconos from '../../assets/images/faleConoscoIMG.png'
 
 
 const FaleConosco = () => {
@@ -48,34 +49,34 @@ const FaleConosco = () => {
             <div className="maior">
                 <div className="forms">
                     <form className="form-fale row g-2 rounded-2 shadow" onSubmit={handleSubmit}>
-                        <p className="h3 text-center">Fale Conosco</p>
+                        <p className="title-1">Fale Conosco</p>
                         {!successful && (
                             <>
                                 <div className="col-md-12 mb-3">
-                                    <label htmlFor="inputEmissor" className="form-label mb-1 fw-bold">Nome:</label>
-                                    <input type="text" className="form-control" id="inputEmissor" required
+                                    <label htmlFor="inputEmissor" className="form-label mb-1 fw-bold">Nome:</label><br />
+                                    <input placeholder="Insira seu nome:" type="text" className="input"  id="inputEmissor" required
                                         name="emissor"
                                         value={formData.emissor || ""}
-                                        onChange={handleChange} />
+                                        onChange={handleChange} /><br /><br />
                                 </div>
 
                                 <div className="col-md-12 mb-3">
-                                    <label htmlFor="inputTelefone" className="form-label mb-1 fw-bold">Telefone *(opcional):</label>
-                                    <input type="text" className="form-control" id="inputTelefone"
+                                    <label  htmlFor="inputTelefone" className="form-label mb-1 fw-bold">Telefone *(opcional):</label><br />
+                                    <input placeholder=" Insira sua senha" type="text" className="input"  id="inputTelefone"
                                         name="telefone"
                                         value={formData.telefone || ""}
-                                        onChange={handleChange} />
+                                        onChange={handleChange} /><br /><br />
                                 </div>
                                 <div className="col-md-12 mb-1">
-                                    <label htmlFor="inputTexto" className="form-label mb-1 fw-bold">Mensagem:</label>
-                                    <textarea rows={5} className="form-control" id="inputTexto" required
+                                    <label htmlFor="inputTexto" className="form-label mb-1 fw-bold">Mensagem:</label><br />
+                                    <textarea placeholder=" Insira sua mensagem" rows={5} className="input"      id="inputTexto" required
                                         name="texto"
                                         value={formData.texto || ""}
-                                        onChange={handleChange}  >
+                                        onChange={handleChange}  ><br /><br />
                                     </textarea>
                                 </div>
 
-                                <button className="btn">Enviar</button>
+                                <button className="mensagem-btn">Enviar</button>
                             </>
                         )}
                         {/* {{message && (
@@ -91,14 +92,11 @@ const FaleConosco = () => {
 
                 </div>
                 <div className="imagem">
-                    <h1>adadadawd</h1>
-                    <h1>adadadawd</h1>
-                    <h1>adadadawd</h1>
-                    <h1>adadadawd</h1>
-                    <h1>adadadawd</h1>
-                    <h1>adadadawd</h1>
-                    <h1>adadadawd</h1>
-
+                    <img className="img-fale" src={faleconos} alt="" />
+                    <h2 className="mens">
+                    Envie para nós o seu problema e</h2>
+                    <h2 className="mens"> entraremos em contato com você.
+                    </h2>
 
                 </div>
 
