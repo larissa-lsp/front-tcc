@@ -1,20 +1,16 @@
 import React from 'react'
 import Footer from "../Footer/Footer"
-import Card from '../../templates/CardNoticia/CardNoticia'
+import Conteudo from '../ConteudoInicio/Conteudo'
 import Header from '../HeaderNoticia/HeaderNoticia'
 
 const HomeNoticia = () => {
     return (
         <div>
                 <Header />
-
-                <Card manchete="Manchete" texto="
-                Texto da manchete mt legal 
-                pipipopopopipipopopo
-                pipipopopopipipopopo
-                pipipopopopipipopopo
-                pipipopopopipipopopo
-                pipipopopopipipopopo"/>
+            
+            <main>
+                <Conteudo />
+            </main>
 
             <Footer />
         </div>

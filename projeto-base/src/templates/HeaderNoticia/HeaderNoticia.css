@@ -1,23 +1,29 @@
 .header{
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #0062B2;
     padding: 10px 20px
 }
 
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    text-align: center;
+}
+
 .imgTitulo{
-    width: 20%;
+    width: 15%;
 }
 
 .navBar a{
-    color: #fff;
+    color: white;
     font-size: 25px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .navBar a:hover{
-    background-color: #CAE9FF;
-    transition: 0.3;
-    padding: 5px 10px;
+    padding: 15px 30px;
+    background-color: #5FA8D3;
+    border-radius: 10px;
 }

@@ -1,17 +1,34 @@
 .footer{
     background-color: #0062b2;
     color: #fff;
-    padding: 5px;
+    padding: 20px 10px;
     text-align: center;
     align-items:center;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+}
 
+.footer p{
+    font-size: large;
+}
+
+.footer a{
+    color:#fff ;
+    background-color: #EDF222; 
+}
+
+.footer a:visited{
+    color:#fff ;
+    background-color: #EDF222;
+}
+
+.footer ul{
     list-style-type: none;
 }
 
-.footer:visited{
-    color:#fff
+.footer ul p{
+    font-size: large;
+    font-weight: bolder;
 }

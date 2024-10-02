@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from '../../assets/images/grupo-imgLogin.png';
+import grupo from '../../assets/images/grupo-imgLogin.png';
+import logo from '../../assets/images/IconeLogo.png'
 import UsuarioService from "../../services/UsuarioService";
 import './Login.css';
 
@@ -66,26 +67,28 @@ const Login = () => {
 
                 <div className="row">
                     <div className="main">
+
+                        <img src={logo} alt="Ícone logo" />
                         <h2 className="title-1">Bem-vindo, colaborador!</h2> <br /> <br />
 
                         <form action="" className="form-login" onSubmit={handleSubmit}>
                 
                             <label htmlFor="email" className="mb-1 fw-bold">Email:</label>
-                            <input type="email" id="email" className="input" required maxLength="50"                               
+                            <input type="email" id="email" className="input border border-black" required maxLength="50"                               
                                 name="email"
                                 value={formData.email || ""}
                                 onChange={handleChange} /> <br />
 
 
                             <label htmlFor="password" className="mb-1 fw-bold">Senha:</label>
-                            <input type="password" id="password" className="input" required maxLength="50" 
+                            <input type="password" id="password" className="input border border-black" required maxLength="50" 
                                 name="senha"
                                 value={formData.senha || ""}
                                 onChange={handleChange} /> <br /><br />
 
                             <div className="containerBtn">
-                                <p className="forgotPass">Esqueceu a senha?
-                                    <Link to={'/forgotpass'}> Clique aqui.</Link>
+                                <p className="forgotPass">Esqueceu a senha?&nbsp;
+                                    <Link to={'/forgotpass'}>Clique aqui.</Link>
                                 </p>
                             </div>
                             <div className="text-center p-2 rounded-2">
@@ -105,7 +108,7 @@ const Login = () => {
 
                     <aside className="side">
                         <h2 className="title-2">É bom tê-lo conosco!</h2> <br />
-                        <img src={logo} alt="img-login" width="60%" /> <br />
+                        <img src={grupo} alt="img-login" width="60%" /> <br />
                         <p className="description-primary">Responsabilidade com a verdade é o ponto crucial</p>
                     </aside>
                 </div>

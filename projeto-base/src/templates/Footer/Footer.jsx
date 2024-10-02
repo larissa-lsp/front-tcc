@@ -7,7 +7,7 @@ function Footer(){
         <footer className="footer">
 
         <div>
-        <p className="direitos">&copy; Copyright {new Date().getFullYear()} Portal360</p>
+        <p className="direitos">Copyright &copy; {new Date().getFullYear()} Portal360</p>
         <p>Fique sempre por dentro das notícias do mundo tecnológico conosco!</p>
         </div>
 

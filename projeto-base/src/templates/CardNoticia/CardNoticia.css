@@ -13,12 +13,13 @@
   
     grid-template-areas: 
     "img-card conteudo";
-  
+
     column-gap: 40px;
   }
   
   .card .img-card{
     max-width: 200px;
+    border-radius: 10px;
     height: auto;
     margin-bottom: 10px;
     grid-area: img-card;
