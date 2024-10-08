@@ -58,14 +58,14 @@ const handleSubmit = (e) => {
                             <>
                                 <div className="col-md-5">
                                     <label htmlFor="inputNome" className="form-label mb-1 fw-bold">Nome:</label>
-                                    <input  type="text" className="form-control border border-black" id="inputNome" 
+                                    <input  type="text" className="form-control border border-secondary" id="inputNome" 
                                             name="nome"
                                             value={formData.nome || ""}
                                             onChange={handleChange} />
                                 </div>
                                 <div className="col-md-5">
                                     <label htmlFor="inputEmail" className="form-label mb-1 fw-bold">Email:</label>
-                                    <input  type="email" className="form-control border border-black" id="inputEmail" 
+                                    <input  type="email" className="form-control border border-secondary" id="inputEmail" 
                                             name="email"
                                             value={formData.email || ""}
                                             onChange={handleChange}/>
@@ -73,7 +73,7 @@ const handleSubmit = (e) => {
 
                                 <div className="col-md-2">
                                     <label htmlFor="inputAcesso" className="form-label mb-1 fw-bold">Acesso:</label>
-                                    <select id="inputAcesso" className="form-select border border-black" 
+                                    <select id="inputAcesso" className="form-select border border-secondary" 
                                         name="nivelAcesso"
                                         defaultValue={''}
                                         onChange={(e) => handleChange(e)}>

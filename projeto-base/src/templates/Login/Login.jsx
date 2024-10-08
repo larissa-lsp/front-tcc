@@ -74,14 +74,14 @@ const Login = () => {
                         <form action="" className="form-login" onSubmit={handleSubmit}>
                 
                             <label htmlFor="email" className="mb-1 fw-bold">Email:</label>
-                            <input type="email" id="email" className="input border border-black" required maxLength="50"                               
+                            <input type="email" id="email" className="input border border-secondary-subtle" required maxLength="50"                               
                                 name="email"
                                 value={formData.email || ""}
                                 onChange={handleChange} /> <br />
 
 
                             <label htmlFor="password" className="mb-1 fw-bold">Senha:</label>
-                            <input type="password" id="password" className="input border border-black" required maxLength="50" 
+                            <input type="password" id="password" className="input border border-secondary-subtle" required maxLength="50" 
                                 name="senha"
                                 value={formData.senha || ""}
                                 onChange={handleChange} /> <br /><br />

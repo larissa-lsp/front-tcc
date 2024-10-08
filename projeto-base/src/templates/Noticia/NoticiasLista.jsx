@@ -47,7 +47,7 @@ const NoticiasLista = () => {
                 <section className="m-2 p-2 shadow-lg">
 
                     <div>
-                        <table className="table table-striped table-hover border-black">
+                        <table className="table table-striped table-hover border-secondary">
                             <thead>
                                 <tr>
                                     <th scope="col"> ID </th>

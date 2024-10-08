@@ -92,14 +92,14 @@ const LoginNewPass = () => {
                         </div>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label mb-0 fw-bold">Email:</label>
-                            <input type="email" id="email" readOnly className="form-control text-center fw-medium shadow"
+                            <input type="email" id="email" readOnly className="form-control text-center fw-medium shadow border border-secondary-subtle"
                                 name="email"
                                 value={usuario.email || ""}
                                 onChange={handleChange} />
                         </div>
                         <div className="mb-2">
                             <label htmlFor="senha" className="form-label mb-0 fw-bold">Nova Senha:</label>
-                            <input type="password" id="senha" className="form-control text-center fw-medium shadow"
+                            <input type="password" id="senha" className="form-control text-center fw-medium shadow border border-secondary-subtle"
                                 name="senha"
                                 value={formData.senha || ""}
                                 onChange={handleChange} />

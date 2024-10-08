@@ -24,7 +24,7 @@ const LoginForgotPass = () => {
                 <h5 className="text-center">Recuperação de Senha</h5>
                 <div className="my-3">
                     <label htmlFor="email" className="form-label mb-0 fw-bold">Email:</label>
-                    <input type="email" id="email" className="form-control text-center fw-medium shadow" />
+                    <input type="email" id="email" className="form-control text-center fw-medium shadow border border-secondary-subtle" />
                 </div>
                 <div className="d-flex flex-row-reverse mt-1">
                     <p className="fw-bold fst-italic opacity-75 me-1">Acessar o sistema:

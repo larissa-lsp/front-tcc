@@ -60,7 +60,7 @@ const FaleConosco = () => {
                               <p className="description-contact">Complete o formulário para enviar sua mensagem para nós.</p>
                                 <div className="col-md-12 mb-3">
                                     <label htmlFor="inputEmissor" className="form-label mb-1 fw-bold">Nome:</label><br />
-                                    <input type="text" className="input border border-black" id="inputEmissor" placeholder="Insira seu nome" required
+                                    <input type="text" className="input border border-secondary-subtle" id="inputEmissor" placeholder="Insira seu nome" required
                                         name="emissor"
                                         value={formData.emissor || ""}
                                         onChange={handleChange} /><br />
@@ -68,7 +68,7 @@ const FaleConosco = () => {
 
                                 <div className="col-md-12 mb-3">
                                     <label htmlFor="inputEmail" className="form-label mb-1 fw-bold">Email:</label> <br />
-                                    <input type="email" className="input border border-black" id="inputEmail" placeholder="Insira o email" required
+                                    <input type="email" className="input border border-secondary-subtle" id="inputEmail" placeholder="Insira o email" required
                                         name="email"
                                         value={formData.email || ""}
                                         onChange={handleChange} />
@@ -77,7 +77,7 @@ const FaleConosco = () => {
 
                                 <div className="col-md-12 mb-1">
                                     <label htmlFor="inputTexto" className="form-label mb-1 fw-bold">Mensagem:</label><br />
-                                    <textarea placeholder=" Insira sua mensagem" rows={5} className="input border border-black" id="inputTexto" required
+                                    <textarea placeholder=" Insira sua mensagem" rows={10} className="input border border-secondary-subtle" id="inputTexto" required
                                         name="texto"
                                         value={formData.texto || ""}
                                         onChange={handleChange}  ><br />
