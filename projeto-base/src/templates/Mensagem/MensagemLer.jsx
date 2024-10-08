@@ -87,34 +87,34 @@ const MensagemLer = () => {
                     <form className="row g-2 m-5 p-2 rounded-2 shadow" onSubmit={handleSubmit}>
                         <div className="col-md-2 mb-2">
                             <label htmlFor="id" className="form-label mb-1 fw-bold">ID:</label>
-                            <input type="text" className="form-control" id="id" name="id" readOnly
+                            <input type="text" className="form-control border border-black" id="id" name="id" readOnly
                                 value={mensagem.id || ''} />
                         </div>
                         <div className="col-md-5 mb-2">
                             <label htmlFor="inputData" className="form-label mb-1 fw-bold">Data:</label>
-                            <input type="text" className="form-control text-center" id="inputData" readOnly
+                            <input type="text" className="form-control text-center border border-black" id="inputData" readOnly
                                 value={mensagem.dataMensagem || ''} />
                         </div>
                         <div className="col-md-5 mb-2">
                             <label htmlFor="inputStatus" className="form-label mb-1 fw-bold">Status:</label>
-                            <input type="text" className="form-control text-center" id="inputStatus" readOnly
+                            <input type="text" className="form-control text-center border border-black" id="inputStatus" readOnly
                                 value={mensagem.statusMensagem || ''} />
                         </div>
 
                         <div className="col-md-6">
-                            <label htmlFor="inputEmissor" className="form-label mb-1 fw-bold">Emissor:</label>
-                            <input type="text" className="form-control" id="inputEmissor" readOnly
+                            <label htmlFor="inputEmissor" className="form-label mb-1 fw-bold ">Emissor:</label>
+                            <input type="text" className="form-control border border-black" id="inputEmissor" readOnly
                                 value={mensagem.emissor || ''} />
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputEmail" className="form-label mb-1 fw-bold">Email:</label>
-                            <input type="email" className="form-control" id="inputEmail" readOnly
+                            <input type="email" className="form-control border border-black" id="inputEmail" readOnly
                                 value={mensagem.email || ''} />
                         </div>
 
                         <div className="col-md-12 my-4">
                             <label htmlFor="inputTexto" className="form-label mb-1 fw-bold">Mensagem:</label>
-                            <textarea rows={5} className="form-control" id="inputTexto"
+                            <textarea rows={5} className="form-control border border-black" id="inputTexto"
                                 value={mensagem.texto || ''} >
 
                             </textarea>

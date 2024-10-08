@@ -112,14 +112,14 @@ const NoticiaEditar = () => {
 
                                 <div className="col-md-1">
                                     <label htmlFor="inputId" className="form-label mb-1 fw-bold mb-1 fw-bold">ID:</label>
-                                    <input type="text" className="form-control" id="inputId" readOnly
+                                    <input type="text" className="form-control border border-black" id="inputId" readOnly
                                         name="id"
                                         defaultValue={noticia.id} />
                                 </div>
 
                                 <div className="col-md-11">
                                     <label htmlFor="inputManchete" className="form-label mb-1 fw-bold mb-1 fw-bold">Manchete:</label>
-                                    <input type="text" className="form-control" id="inputManchete"
+                                    <input type="text" className="form-control border border-black" id="inputManchete"
                                         name="manchete"
                                         defaultValue={noticia.manchete}
                                         onChange={handleChange} />
@@ -128,7 +128,7 @@ const NoticiaEditar = () => {
 
                                 <div className="col-md-12">
                                     <label htmlFor="inputPalavrasChave" className="form-label mb-1 fw-bold mb-1 fw-bold">Palavras-chave:</label>
-                                    <textarea rows={2} className="form-control" id="inputPalavrasChave"
+                                    <textarea rows={2} className="form-control border border-black" id="inputPalavrasChave"
                                         name="palavrasChave"
                                         defaultValue={noticia.palavrasChave}
                                         onChange={handleChange} >
@@ -139,14 +139,14 @@ const NoticiaEditar = () => {
                                 {/*
                                 <div className="col-md-6">
                                     <label htmlFor="inputDataEnvio" className="form-label mb-1 fw-bold mb-1 fw-bold">Data de envio</label>
-                                    <input type="date" className="form-control" id="inputDataEnvio"
+                                    <input type="date" className="form-control border border-black" id="inputDataEnvio"
                                         defaultValue={noticia.dataEnvio} />
 
                                 </div>
 
                                 <div className="col-md-6">
                                     <label htmlFor="inputDataPublicacao" className="form-label mb-1 fw-bold mb-1 fw-bold">Data de publicação</label>
-                                    <input type="date" className="form-control" id="inputDataPublicacao" 
+                                    <input type="date" className="form-control border border-black" id="inputDataPublicacao" 
                                         defaultValue={noticia.dataPublicacao} />
 
                                 </div>
@@ -154,7 +154,7 @@ const NoticiaEditar = () => {
 
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputFonte" className="form-label mb-1 fw-bold mb-1 fw-bold">Fonte:</label>
-                                    <input type="text" className="form-control" id="inputFonte"
+                                    <input type="text" className="form-control border border-black" id="inputFonte"
                                         name="fonte"
                                         defaultValue={noticia.fonte} 
                                         onChange={handleChange} />
@@ -162,7 +162,7 @@ const NoticiaEditar = () => {
 
                                 <div className="col-md-12">
                                     <label htmlFor="inputConteudo" className="form-label mb-1 fw-bold mb-1 fw-bold">Conteúdo:</label>
-                                    <textarea rows={20} className="form-control" id="inputConteudo"
+                                    <textarea rows={20} className="form-control border border-black" id="inputConteudo"
                                         name="conteudo"
                                         defaultValue={noticia.conteudo}
                                         onChange={handleChange} >

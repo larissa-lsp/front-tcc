@@ -90,7 +90,7 @@ const NoticiaNova = () => {
 
                                 <div className="col-md-12">
                                     <label htmlFor="inputManchete" className="col-form-label">Manchete:</label>
-                                    <input type="text" className="form-control" id="inputManchete" required
+                                    <input type="text" className="form-control border border-black" id="inputManchete" required
                                         name="manchete"
                                         value={formData.manchete || ""}
                                         onChange={handleChange} />
@@ -98,7 +98,7 @@ const NoticiaNova = () => {
 
                                 <div className="col-md-12">
                                     <label htmlFor="inputPalavrasChave" className="col-form-label">Palavras-chave:</label>
-                                    <textarea className="form-control" id="inputPalavrasChave" rows="2" required
+                                    <textarea className="form-control border border-black" id="inputPalavrasChave" rows="2" required
                                         name="palavrasChave"
                                         value={formData.palavrasChave || ""}
                                         onChange={handleChange} >
@@ -107,7 +107,7 @@ const NoticiaNova = () => {
 
                                 <div className="col-md-12">
                                     <label htmlFor="inputFonte" className="col-form-label">Fonte:</label>
-                                    <input type="text" className="form-control" id="inputFonte" placeholder="" required
+                                    <input type="text" className="form-control border border-black" id="inputFonte" placeholder="" required
                                         name="fonte"
                                         value={formData.fonte || ""}
                                         onChange={handleChange} />
@@ -115,39 +115,40 @@ const NoticiaNova = () => {
 
                                 <div className="col-md-12">
                                     <label htmlFor="inputConteudo" className="col-form-label">Conteúdo:</label>
-                                    <textarea className="form-control" id="inputConteudo" rows="20" required
+                                    <textarea className="form-control border border-black" id="inputConteudo" rows="20" required
                                         name="conteudo"
                                         value={formData.conteudo || ""}
                                         onChange={handleChange} >
                                     </textarea>
                                 </div>
 
-                                <div className="col-md-12">
+                                <div className="col-md-12 d-flex justify-content-around align-items-center">
                                     <ImageUploaderModal
                                         setFile={setChosenFile}
                                         setImage={setImage}
                                         chosenImage={chosenImage} />
-                                </div>
 
-                                <div className="col-md-12">
-                                    <button className="btn btn-secondary mb-2">Gravar Nova Notícia</button>
+
+                                    <button className="btn btn-secondary">
+                                        Gravar Nova Notícia
+                                    </button>
                                 </div>
                             </>
                         )}
 
-                        {message && (
-                            <div className="m-1">
-                                <div className={
-                                    "text-center h4 fst-italic py-4 rounded-2 border border-5 " + (successful ? "border-success" : "border-danger")
-                                }>
-                                    {message}
-                                </div>
+                    {message && (
+                        <div className="m-1">
+                            <div className={
+                                "text-center h4 fst-italic py-4 rounded-2 border border-5 " + (successful ? "border-success" : "border-danger")
+                            }>
+                                {message}
                             </div>
-                        )}
-                    </form>
-                </section>
-            </div>
+                        </div>
+                    )}
+                </form>
+            </section>
         </div>
+        </div >
     )
 }
 

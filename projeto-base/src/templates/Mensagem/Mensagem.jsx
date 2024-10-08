@@ -36,7 +36,7 @@ const Mensagem = () => {
                 />
                 <section className="p-2 m-2 shadow-lg">
                     <div className="table-wrapper">
-                        <table className="table table-striped table-hover">
+                        <table className="table table-striped table-hover border-black">
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>

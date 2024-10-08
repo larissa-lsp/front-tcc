@@ -36,7 +36,8 @@ const Home = () => {
                             title={LogoTitulo}
                             logo={logo}
                         />
-                        <h2 className="user-nome fw-bold fst-italic">Bem-vindo(a), {currentUser.nome}!</h2>
+                        <br /> <br />
+                        <h2 className="user-nome fw-bold fst-italic d-flex justify-content-around align-items-center">Bem-vindo(a), {currentUser.nome}!</h2>
                     </div>
                 </div> :
                 <AcessoNegado />

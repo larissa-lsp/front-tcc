@@ -1,7 +1,8 @@
 import { useState } from "react"
 import MensagemService from "../../services/MensagemService"
-import logo from '../../assets/images/IconeLogo.png';
 import './FaleConosco.css'
+import faleconos from '../../assets/images/faleConoscoIMG.png'
+import IconeLogo from '../../assets/images/IconeLogo.png'
 
 
 const FaleConosco = () => {
@@ -44,46 +45,54 @@ const FaleConosco = () => {
     }
 
     return (
-        <div className="d-flex justify-content-center">
-            <form className="form-fale row g-2 rounded-2 shadow" onSubmit={handleSubmit}>
-                <p className="h3 text-center">Fale Conosco</p>
-                {!successful && (
-                    <>
-                        <div className="col-md-12 mb-3">
-                            <label htmlFor="inputEmissor" className="form-label mb-1 fw-bold">Nome:</label>
-                            <input type="text" className="form-control" id="inputEmissor" required
-                                name="emissor"
-                                value={formData.emissor || ""}
-                                onChange={handleChange} />
-                        </div>
-                        <div className="col-md-12 mb-3">
-                            <label htmlFor="inputEmail" className="form-label mb-1 fw-bold">Email:</label>
-                            <input type="email" className="form-control" id="inputEmail" required
-                                name="email"
-                                value={formData.email || ""}
-                                onChange={handleChange} />
-                        </div>
-                        <div className="col-md-12 mb-3">
-                            <label htmlFor="inputTelefone" className="form-label mb-1 fw-bold">Telefone *(opcional):</label>
-                            <input type="text" className="form-control" id="inputTelefone"
-                                name="telefone"
-                                value={formData.telefone || ""}
-                                onChange={handleChange} />
-                        </div>
-                        <div className="col-md-12 mb-1">
-                            <label htmlFor="inputTexto" className="form-label mb-1 fw-bold">Mensagem:</label>
-                            <textarea rows={5} className="form-control" id="inputTexto" required
-                                name="texto"
-                                value={formData.texto || ""}
-                                onChange={handleChange}  >
-                            </textarea>
-                        </div>
-                        <div className="col-md-12 mb-1 d-flex flex-row-reverse">
-                            <button className="btn btn-secondary mb-2">Enviar</button>
-                        </div>
-                    </>
-                )}
-                {message && (
+        <>
+            <div className="maior">
+                <div className="forms">
+                    <form className="form-fale row g-2" onSubmit={handleSubmit}>
+                        <a href="/">
+                            <img src={IconeLogo} alt="IconeLogo" />
+                        </a><br /><br />
+                        <h1 className="description-contact-1">Fale Conosco</h1>
+                       
+                        {!successful && (
+                            <>
+                            <div>
+                              <p className="description-contact">Complete o formulário para enviar sua mensagem para nós.</p>
+                                <div className="col-md-12 mb-3">
+                                    <label htmlFor="inputEmissor" className="form-label mb-1 fw-bold">Nome:</label><br />
+                                    <input type="text" className="input border border-black" id="inputEmissor" placeholder="Insira seu nome" required
+                                        name="emissor"
+                                        value={formData.emissor || ""}
+                                        onChange={handleChange} /><br />
+                                </div>
+
+                                <div className="col-md-12 mb-3">
+                                    <label htmlFor="inputEmail" className="form-label mb-1 fw-bold">Email:</label> <br />
+                                    <input type="email" className="input border border-black" id="inputEmail" placeholder="Insira o email" required
+                                        name="email"
+                                        value={formData.email || ""}
+                                        onChange={handleChange} />
+                                </div>
+
+
+                                <div className="col-md-12 mb-1">
+                                    <label htmlFor="inputTexto" className="form-label mb-1 fw-bold">Mensagem:</label><br />
+                                    <textarea placeholder=" Insira sua mensagem" rows={5} className="input border border-black" id="inputTexto" required
+                                        name="texto"
+                                        value={formData.texto || ""}
+                                        onChange={handleChange}  ><br />
+                                    </textarea>
+                                </div>
+                                <div className="col-md-12 mb-1"><br />
+                                    <button className="mensagem-btn" type="submit">Enviar</button>
+                                </div>  
+                            </div>
+                             
+
+
+                            </>
+                        )}
+                        {message && (
                     <div className="m-1">
                         <div className={
                             "text-center h4 fst-italic py-4 rounded-2 border border-5 " + (successful ? "border-success" : "border-danger")
@@ -91,9 +100,21 @@ const FaleConosco = () => {
                             {message}
                         </div>
                     </div>
-                )}
-            </form>
-        </div>
+                    )}
+                    </form>
+
+                </div>
+                <div className="imagem">
+                    <img className="img-fale" src={faleconos} alt="" />
+                    <h2 className="mens">
+                        Envie para nós o seu problema e</h2>
+                    <h2 className="mens"> entraremos em contato com você.
+                    </h2>
+
+                </div>
+
+            </div>
+        </>
     )
 }
 

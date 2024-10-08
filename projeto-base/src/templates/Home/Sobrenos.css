@@ -1,0 +1,33 @@
+  .fundo-color{
+    margin: 0;
+    padding: 20px;
+    background-color: #CAE9FF;
+  }
+  .topic {
+    display: flex;
+    margin-bottom: 20px;
+    padding-top: 20px;
+  }
+  
+  .topic-image {
+    max-width: 1000px; 
+    margin-right: 40px; 
+    border-radius: 10px;
+  }
+  
+  .txtSobre {
+    font-size: 30px;
+    margin: 0;
+    color: black;
+  }
+  
+  .conteudo {
+    font-size: 1.5em; 
+    color: #555;
+  }
+    
+    
+    
+  
+    
+    
