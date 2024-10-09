@@ -35,10 +35,20 @@ const NoticiaEditar = () => {
     const [formData, setFormData] = useState({});
     const [chosenImage, setChosenImage] = useState();
 
+    const [visible, setVisible] = useState(false);
     const currentUser = UsuarioService.getCurrentUser();
 
     useEffect(() => {
+        if(currentUser.nivelAcesso == 'ADMIN'){
+            setVisible(false)
+        } else {
+            setVisible(true)
+        }
+    }, []);
+
+    useEffect(() => {
         if (_dbRecords.current) {
+          
             NoticiaService.findById(id)
                 .then(response => {
                     const noticia = response.data;
@@ -92,6 +102,25 @@ const NoticiaEditar = () => {
 
                 setMessage(resMessage);
                 setSuccessful(false);
+            }
+        )
+    }
+
+    const publicar = (e) => {
+        e.preventDefault();
+        setSuccessful(false);
+
+        NoticiaService.publicar(id).then(
+            (response) => {
+                setMessage(response.data.message);
+                setSuccessful(true);
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            }, (error) => {
+                const message = error.response.data.message;
+                setMessage(message);
             }
         )
     }
@@ -182,8 +211,8 @@ const NoticiaEditar = () => {
                                     <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
                                         Gravar
                                     </button>
-                              
-                                    <button type="submit" className="btn btn-primary">
+
+                                    <button type="button" className="btn btn-primary"  onClick={publicar} hidden={visible}  >
                                         Publicar
                                     </button>
                                 </div>
