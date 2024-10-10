@@ -1,6 +1,6 @@
 .header{
     background-color: #0062B2;
-    padding: 10px 20px
+    padding: 20px 30px
 }
 
 .navBar{
@@ -23,7 +23,7 @@
 }
 
 .navBar a:hover{
-    padding: 15px 30px;
+    padding: 0px 20px;
     background-color: #5FA8D3;
     border-radius: 10px;
 }

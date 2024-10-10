@@ -1,44 +1,49 @@
-#card{
-    border: 1px solid hsla(0, 0%, 80%);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-    max-width: fit-content;
-  
-    display: grid;
-    grid-template-columns: 200px 500px;
-    grid-template-rows: 200px 1fr;
-  
-    grid-template-areas: 
-    "img-card conteudo";
+.card{
+  border: 1px solid hsla(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: fit-content;
 
-    column-gap: 40px;
-  }
-  
-  #card .img-card{
-    max-width: 200px;
-    border-radius: 10px;
-    height: auto;
-    margin-bottom: 10px;
-    grid-area: img-card;
-  }
-  
-  #card .title-card{
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: larger;
-    margin: 0;
-    color: hsl(0, 0%, 20%);
-  }
-  
-  #card .text-card{
-    font-family: Arial, sans-serif;
-    color: hsl(0, 0%, 40%);
-  }
-  
-  #card .conteudo{
-    text-align: left;
-    grid-area: conteudo;
-  }
+  display: grid;
+  grid-template-columns: 200px 500px;
+  grid-template-rows: 200px 1fr;
+
+  grid-template-areas: 
+  "img-card conteudo"
+  "img-card btn-ler";
+
+  column-gap: 40px;
+}
+
+.card .img-card{
+  max-width: 200px;
+  border-radius: 10px;
+  height: auto;
+  margin-bottom: 10px;
+  grid-area: img-card;
+}
+
+.card .title-card{
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: larger;
+  margin: 0;
+  color: hsl(0, 0%, 20%);
+}
+
+.card .text-card{
+  font-family: Arial, sans-serif;
+  color: hsl(0, 0%, 40%);
+}
+
+.card .btn-ler{
+  grid-area: bnt-ler;
+}
+
+.card .conteudo{
+  text-align: left;
+  grid-area: conteudo;
+}
