@@ -18,15 +18,29 @@ const HistoricoNoticia = () => {
     const [noticias, setNoticias] = useState([]);
 
     useEffect(() => {
-        NoticiaService.findAll().then(
-            (response) => {
-                const noticias = response.data;
-                setNoticias(noticias);
-            }
-        ).catch((error) => {
-            console.log(error);
-        })
+        if(currentUser.nivelAcesso == 'COLABORADOR'){
+            setVisible(false)
+        } else {
+            setVisible(true)
+        }
     }, []);
+
+    useEffect(() => {
+        if (_dbRecords.current) {
+          
+            NoticiaService.findById(id)
+                .then(response => {
+                    const noticia = response.data;
+                    setNoticia(noticia);
+                    console.log(noticia);
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        } return () => {
+            _dbRecords.current = false;
+        }
+    }, [id]);
 
     const editar = (id) => {
         navigate(`/noticiaeditar/` + id)

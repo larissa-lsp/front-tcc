@@ -164,23 +164,7 @@ const NoticiaEditar = () => {
 
                                     </textarea>
                                 </div>
-
-                                {/*
-                                <div className="col-md-6">
-                                    <label htmlFor="inputDataEnvio" className="form-label mb-1 fw-bold mb-1 fw-bold">Data de envio</label>
-                                    <input type="date" className="form-control border border-black" id="inputDataEnvio"
-                                        defaultValue={noticia.dataEnvio} />
-
-                                </div>
-
-                                <div className="col-md-6">
-                                    <label htmlFor="inputDataPublicacao" className="form-label mb-1 fw-bold mb-1 fw-bold">Data de publicação</label>
-                                    <input type="date" className="form-control border border-black" id="inputDataPublicacao" 
-                                        defaultValue={noticia.dataPublicacao} />
-
-                                </div>
-                                */}
-
+                                
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputFonte" className="form-label mb-1 fw-bold mb-1 fw-bold">Fonte:</label>
                                     <input type="text" className="form-control border border-black" id="inputFonte"
