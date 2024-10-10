@@ -41,6 +41,7 @@ const UsuariosLista = () => {
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
+                <h2 className="m-2 text-center">Lista de Usuários</h2><br />
                     <div className="table-wrapper">
                         <table className="table table-striped table-hover border-secondary">
                             <thead>

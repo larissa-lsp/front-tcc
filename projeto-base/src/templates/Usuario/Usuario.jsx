@@ -4,6 +4,7 @@ import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
 import NewUser from '../../assets/images/novoUsuario.png'
+import imgUsuarioLista from "../../assets/images/Add User-cuate.png"
 
 const Usuario = () => {
 
@@ -27,6 +28,10 @@ const Usuario = () => {
                             className="btn btn-lg btn-warning">
                             Lista de Usuários
                         </Link>
+                    </div>
+                    <br />
+                    <div className="text-center">
+                        <img src={imgUsuarioLista} alt="img-lista" width="40%" height="40%" /><br />
                     </div>
                 </section>
             </div>

@@ -35,6 +35,7 @@ const Mensagem = () => {
                     logo={logo}
                 />
                 <section className="p-2 m-2 shadow-lg">
+                <h2 className="m-2 text-center">Lista de Mensagens</h2><br />
                     <div className="table-wrapper">
                         <table className="table table-striped table-hover border-secondary">
                             <thead>

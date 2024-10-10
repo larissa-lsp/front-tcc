@@ -6,6 +6,8 @@ import UsuarioService from "../../services/UsuarioService"
 import AcessoNegado from "./AcessoNegado"
 import { useState } from "react"
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
+import imgDashboard from "../../assets/images/dashboard-img.png"
+
 
 const Home = () => {
 
@@ -38,6 +40,10 @@ const Home = () => {
                         />
                         <br /> <br />
                         <h2 className="user-nome fw-bold fst-italic d-flex justify-content-around align-items-center">Bem-vindo(a), {currentUser.nome}!</h2>
+
+                        <div className="text-center">
+                            <img src={imgDashboard} alt="img-lista" width="30%" height="30%" />
+                        </div>
                     </div>
                 </div> :
                 <AcessoNegado />

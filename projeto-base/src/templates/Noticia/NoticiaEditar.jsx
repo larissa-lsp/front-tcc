@@ -135,6 +135,7 @@ const NoticiaEditar = () => {
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
+                <h2 className="m-2 text-center">Editar Notícia</h2><br />
                     <form className="row g-3 m-3 p-3 border shadow rounded-2" onSubmit={handleSubmit} >
                         {!successful && (
                             <>

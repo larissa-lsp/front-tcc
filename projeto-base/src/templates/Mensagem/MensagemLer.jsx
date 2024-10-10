@@ -84,6 +84,7 @@ const MensagemLer = () => {
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
+                <h2 className="m-2 text-center">Mensagem</h2><br />
                     <form className="row g-2 m-5 p-2 rounded-2 shadow" onSubmit={handleSubmit}>
                         <div className="col-md-2 mb-2">
                             <label htmlFor="id" className="form-label mb-1 fw-bold">ID:</label>

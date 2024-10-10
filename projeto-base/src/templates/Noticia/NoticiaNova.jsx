@@ -84,10 +84,10 @@ const NoticiaNova = () => {
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
+                <h2 className="m-2 text-center">Nova Notícia</h2><br />
                     <form className="row g-3 m-3 p-3 border shadow rounded-2" onSubmit={handleSubmit}>
                         {!successful && (
                             <>
-
                                 <div className="col-md-12">
                                     <label htmlFor="inputManchete" className="col-form-label">Manchete:</label>
                                     <input type="text" className="form-control border border-black" id="inputManchete" required

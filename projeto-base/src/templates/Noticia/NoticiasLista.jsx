@@ -45,7 +45,7 @@ const NoticiasLista = () => {
                 />
 
                 <section className="m-2 p-2 shadow-lg">
-
+                <h2 className="m-2 text-center">Lista de Notícias</h2><br />
                     <div>
                         <table className="table table-striped table-hover border-secondary">
                             <thead>

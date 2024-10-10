@@ -53,6 +53,7 @@ const handleSubmit = (e) => {
                     logo={logo}
                 />
                 <section className="m-2 p-2 shadow-lg">
+                <h2 className="m-2 text-center">Novo Usuário</h2><br />
                     <form className="row g-2 m-5 p-2 rounded-2 shadow" onSubmit={handleSubmit}>
                         {!successful && (
                             <>
