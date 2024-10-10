@@ -6,14 +6,18 @@
   margin: 10px;
   text-align: center;
   max-width: fit-content;
+
   display: grid;
   grid-template-columns: 200px 500px;
   grid-template-rows: 200px 1fr;
+
   grid-template-areas: 
   "img-card conteudo"
   "img-card btn-ler";
+
   column-gap: 40px;
 }
+
 .card .img-card{
   max-width: 200px;
   border-radius: 10px;
@@ -21,6 +25,7 @@
   margin-bottom: 10px;
   grid-area: img-card;
 }
+
 .card .title-card{
   font-family: Arial, sans-serif;
   font-weight: bold;
@@ -28,13 +33,16 @@
   margin: 0;
   color: hsl(0, 0%, 20%);
 }
+
 .card .text-card{
   font-family: Arial, sans-serif;
   color: hsl(0, 0%, 40%);
 }
+
 .card .btn-ler{
   grid-area: bnt-ler;
 }
+
 .card .conteudo{
   text-align: left;
   grid-area: conteudo;
