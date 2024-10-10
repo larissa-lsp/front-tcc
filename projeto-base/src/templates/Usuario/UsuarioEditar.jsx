@@ -41,7 +41,6 @@ const UsuarioEditar = () => {
         })
     }, []);
 
-
     /*
         A propriedade 'value' para um campo de formulário sem um manipulador 'onChange', 
         faz com que o campo seja renderizado como somente de leitura. 
@@ -97,7 +96,7 @@ const UsuarioEditar = () => {
                         </div>
 
                         <div className="col-12 mb-2 d-flex justify-content-between">
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className="btn btn-primary" onClick={alterar}>
                                 Gravar Alterações
                             </button>
                             <button type="button" className="btn btn-warning">

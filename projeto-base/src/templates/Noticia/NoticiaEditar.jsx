@@ -78,6 +78,25 @@ const NoticiaEditar = () => {
         setNoticia(noticia => ({ ...noticia, [name]: value }));
     }
 
+    const inativar = (e) => {
+        e.preventDefault();
+        setSuccessful(false);
+
+        NoticiaService.inativar(id).then(
+            (response) => {
+                setMessage(response.data.message);
+                setSuccessful(false);
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                })
+            }, (error) => {
+                const message = error.response.data.message;
+                setMessage(message);
+            }
+        )
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setMessage("");
@@ -113,7 +132,7 @@ const NoticiaEditar = () => {
         NoticiaService.publicar(id).then(
             (response) => {
                 setMessage(response.data.message);
-                setSuccessful(true);
+                setSuccessful(false);
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -192,12 +211,16 @@ const NoticiaEditar = () => {
                                         setFile={setChosenFile}
                                         setImage={setImage}
                                         chosenImage={chosenImage} />
+
+                                    <button type="submit" className="btn btn-danger" onClick={inativar}>
+                                        Inativar
+                                    </button>
                              
-                                    <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+                                    <button type="submit" className="btn btn-secondary" onClick={handleSubmit}>
                                         Gravar
                                     </button>
 
-                                    <button type="button" className="btn btn-primary"  onClick={publicar} hidden={visible}  >
+                                    <button type="button" className="btn btn-success"  onClick={publicar} hidden={visible}  >
                                         Publicar
                                     </button>
                                 </div>
