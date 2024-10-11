@@ -1,7 +1,8 @@
 
 import logo from '../../assets/images/home.png'
 import LogoTitulo from '../../assets/images/LogoTitulo.png'
-import Header from "../../components/Header/Header"
+import Header from "../HeaderNoticia/HeaderNoticia"
+import Footer from '../Footer/Footer'
 import './Sobrenos.css'
 import metas from '../../assets/images/metas.png'
 import mudando from '../../assets/images/estamos-mudando1.png'
@@ -72,7 +73,7 @@ const Sobrenos = () => {
 
 </div>
       
-
+    <Footer/>
     </>
   )
 }

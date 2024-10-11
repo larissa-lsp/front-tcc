@@ -136,8 +136,7 @@ const NoticiaAberta = () => {
                         logo={logo}
                     />
                     <section className="m-2 p-2 shadow-lg">
-
-
+                    
                     </section>
                 </div></div>
         </>

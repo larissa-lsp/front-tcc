@@ -1,8 +1,9 @@
   .fundo-color{
     margin: 0;
     padding: 20px;
-    background-color: #CAE9FF;
+    background-color: #fff;
   }
+  
   .topic {
     display: flex;
     margin-bottom: 20px;
@@ -11,7 +12,7 @@
   
   .topic-image {
     max-width: 1000px; 
-    margin-right: 40px; 
+    margin-right: 40px;   
     border-radius: 10px;
   }
   
