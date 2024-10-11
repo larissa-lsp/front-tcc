@@ -25,6 +25,8 @@ import NoticiaNova from "../templates/Noticia/NoticiaNova"
 import NoticiasLista from "../templates/Noticia/NoticiasLista"
 import HistoricoNoticia from "../templates/Noticia/HistoricoNoticia"
 import NoticiaAberta from "../templates/Noticia/NoticiaAberta"
+import SuccessPage from "../templates/Success/SuccessPage"
+import SuccessPageAdmin from "../templates/Success/SuccessPageAdmin"
 
 
 const AppRoutes = () => {
@@ -37,6 +39,8 @@ const AppRoutes = () => {
         <Route path="/forgotpass" element={<LoginForgotPass />} />
         <Route path="/newpass/:id" element={<LoginNewPass />} />
         <Route path="/sobrenos" element={<SobreNos />} />
+        <Route path="/success" element={<SuccessPage />} />
+        <Route path="/successadm" element={<SuccessPageAdmin />} />
 
         <Route path="/mensagem" element={<Mensagem />} />
         <Route path="/mensagemler/:id" element={<MensagemLer />} />

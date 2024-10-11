@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
@@ -37,6 +37,12 @@ const NoticiaEditar = () => {
 
     const [visible, setVisible] = useState(false);
     const currentUser = UsuarioService.getCurrentUser();
+
+    const navigate = useNavigate();
+
+    const goto = () => {
+        navigate("/home");
+    }
 
     useEffect(() => {
         if(currentUser.nivelAcesso == 'ADMIN'){
@@ -84,6 +90,7 @@ const NoticiaEditar = () => {
 
         NoticiaService.inativar(id).then(
             (response) => {
+                navigate("/successadm");
                 setMessage(response.data.message);
                 setSuccessful(false);
                 window.scrollTo({
@@ -131,6 +138,7 @@ const NoticiaEditar = () => {
 
         NoticiaService.publicar(id).then(
             (response) => {
+                navigate("/successadm");
                 setMessage(response.data.message);
                 setSuccessful(false);
                 window.scrollTo({

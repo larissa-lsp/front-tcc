@@ -13,8 +13,8 @@ function Footer() {
 
             <div>
                 <img src={IconeLogo} alt="Logo 360" />
-                <Link to={'/login'} className="acesso-restrito">
-                    <p className='my-2'>Acesso Restrito</p>
+                <Link to={'/login'} className="acesso-restrito"><br />
+                    <p className='my-3'>Acesso Restrito</p>
                 </Link>
             </div>
 

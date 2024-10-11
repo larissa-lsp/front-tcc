@@ -96,7 +96,7 @@ const UsuarioEditar = () => {
                         </div>
 
                         <div className="col-12 mb-2 d-flex justify-content-between">
-                            <button type="submit" className="btn btn-primary" onClick={alterar}>
+                            <button type="submit" className="btn btn-primary">
                                 Gravar Alterações
                             </button>
                             <button type="button" className="btn btn-warning">

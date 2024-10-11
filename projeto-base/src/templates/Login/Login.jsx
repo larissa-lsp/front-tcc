@@ -33,18 +33,23 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setMessage("");
-
+    
         UsuarioService.signin(formData.email, formData.senha).then(
             () => {
                 const userJson = localStorage.getItem("user");
                 const user = JSON.parse(userJson || '{}');
-                if (user.statusUsuario == 'ATIVO') {
-                    navigate("/home");
-                } else if (user.statusUsuario == 'TROCAR_SENHA') {
-                    navigate(`/newpass/` + user.id);
-                    //window.location.reload(); ordnael@email.com.br/
+    
+                // Check the nivelAcesso before proceeding
+                if (user.nivelAcesso === 'USER') {
+                    setMessage("Acesso negado: seu nível de acesso não permite login.");
+                    return;
                 }
-
+    
+                if (user.statusUsuario === 'ATIVO') {
+                    navigate("/home");
+                } else if (user.statusUsuario === 'TROCAR_SENHA') {
+                    navigate(`/newpass/` + user.id);
+                }
             },
             (error) => {
                 const respMessage =
@@ -53,12 +58,12 @@ const Login = () => {
                         error.response.data.message) ||
                     error.message ||
                     error.toString();
-
+    
                 setMessage(respMessage);
             }
-
         );
     };
+    
 
     return (
 
@@ -100,7 +105,7 @@ const Login = () => {
                             </div>
 
                             <div className="containerBtn">
-                                <button className="btn" type="button" onClick={backto}>Cancelar</button>
+                                <button className="btn" type="button" onClick={backto}>Voltar</button>
                                 <button className="btn" type="submit">Entrar</button>
                             </div>
                         </form>

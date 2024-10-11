@@ -59,23 +59,23 @@ const handleSubmit = (e) => {
                             <>
                                 <div className="col-md-5">
                                     <label htmlFor="inputNome" className="form-label mb-1 fw-bold">Nome:</label>
-                                    <input  type="text" className="form-control border border-secondary" id="inputNome" 
-                                            name="nome"
+                                    <input  type="text" className="form-control border border-secondary" id="inputNome"
+                                            name="nome" required
                                             value={formData.nome || ""}
                                             onChange={handleChange} />
                                 </div>
                                 <div className="col-md-5">
                                     <label htmlFor="inputEmail" className="form-label mb-1 fw-bold">Email:</label>
-                                    <input  type="email" className="form-control border border-secondary" id="inputEmail" 
-                                            name="email"
+                                    <input  type="email" className="form-control border border-secondary" id="inputEmail"
+                                            name="email" required
                                             value={formData.email || ""}
                                             onChange={handleChange}/>
                                 </div>
 
                                 <div className="col-md-2">
                                     <label htmlFor="inputAcesso" className="form-label mb-1 fw-bold">Acesso:</label>
-                                    <select id="inputAcesso" className="form-select border border-secondary" 
-                                        name="nivelAcesso"
+                                    <select id="inputAcesso" className="form-select border border-secondary"
+                                        name="nivelAcesso" required
                                         defaultValue={''}
                                         onChange={(e) => handleChange(e)}>
 

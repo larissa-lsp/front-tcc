@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
-import perfil from '../../assets/images/perfil_blz.jpg'
+import perfil from '../../assets/images/perfil_blz.png'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import './Usuario.css';
@@ -124,7 +124,7 @@ const UsuarioAlterarSenha = () => {
                                 </div>
                                 <div>
                                     <label htmlFor="newpass" className="form-label mb-0 fw-bold">Confirme a Senha:</label>
-                                    <input type="password" id="newpass" className="form-control text-center fw-medium shadow"
+                                    <input type="password" id="newpass" className="form-control text-center fw-medium shadow" 
                                         name="newpass" required
                                         onChange={confirmPass} />
                                 </div>
