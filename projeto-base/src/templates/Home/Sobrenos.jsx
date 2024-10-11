@@ -69,8 +69,6 @@ const Sobrenos = () => {
             </h5>
           </div>
         </div><br /><br />
-
-
       </div>
 
       <Footer />
