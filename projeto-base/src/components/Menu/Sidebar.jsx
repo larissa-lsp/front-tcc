@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import './Sidebar.css';
 import logo from '../../assets/images/system-logo_24_x_24.png';
-import perfil from '../../assets/images/perfil_blz.jpg'
+import perfil from '../../assets/images/perfil_blz.png'
 import UsuarioService from "../../services/UsuarioService";
 
 const Sidebar = () => {

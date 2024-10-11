@@ -2,7 +2,7 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import Header from "../../components/Header/Header"
 import Sidebar from '../../components/Menu/Sidebar'
 import logo from '../../assets/images/IconeLogo.png';
-import perfil from '../../assets/images/perfil_blz.jpg'
+import perfil from '../../assets/images/perfil_blz.png'
 import { useEffect, useRef, useState } from "react"
 import UsuarioService from "../../services/UsuarioService"
 import './Usuario.css';
