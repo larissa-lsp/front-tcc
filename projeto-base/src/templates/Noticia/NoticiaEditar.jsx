@@ -211,7 +211,7 @@ const NoticiaEditar = () => {
                                 </div>
 
                                 <div className="col-md-12 text-center">
-                                    <img className="shadow-lg" src={noticia.foto ? 'data:image/jpeg;base64,' + noticia.foto : logo} alt="..." />
+                                    <img className="shadow-lg" src={noticia.foto ? 'data:image/jpeg;base64,' + noticia.foto : logo} alt="..." width="400px" height="400px"/>
                                 </div>
                                 
                                 <div className="col-md-12 d-flex justify-content-around align-items-center">
