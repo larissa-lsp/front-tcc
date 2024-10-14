@@ -1,12 +1,9 @@
-import { Link, useParams } from "react-router-dom"
-import Header from "../../components/Header/Header"
-import Sidebar from '../../components/Menu/Sidebar'
-import logo from '../../assets/images/IconeLogo.png';
-import LogoTitulo from '../../assets/images/LogoTitulo.png'
+import { useParams } from "react-router-dom"
+import Header from "../HeaderNoticia/HeaderNoticia"
+import Footer from "../Footer/Footer"
 import { useRef, useState, useEffect } from "react";
+import foto from '../../assets/images/Tecnologia1.png'
 import NoticiaService from "../../services/NoticiaService";
-import ImageUploaderModal from "../../components/ImageUploader/ImageUploaderModal";
-import UsuarioService from "../../services/UsuarioService";
 
 const NoticiaAberta = () => {
 
@@ -22,33 +19,21 @@ const NoticiaAberta = () => {
         dataPublicacao: "",
         fonte: "",
         foto: null,
-        statusNoticia: ""
+        statusNoticia: "",
+        usuario:{
+            nome:""
+        }
 
     };
 
     const [noticia, setNoticia] = useState(initialObjectState);
 
-    const [message, setMessage] = useState();
-    const [successful, setSuccessful] = useState(false);
-
     const [file, setFile] = useState("");
     const [formData, setFormData] = useState({});
-    const [chosenImage, setChosenImage] = useState();
-
-    const [visible, setVisible] = useState(false);
-    const currentUser = UsuarioService.getCurrentUser();
-
-    useEffect(() => {
-        if (currentUser.nivelAcesso == 'ADMIN') {
-            setVisible(false)
-        } else {
-            setVisible(true)
-        }
-    }, []);
 
     useEffect(() => {
         if (_dbRecords.current) {
-
+          
             NoticiaService.findById(id)
                 .then(response => {
                     const noticia = response.data;
@@ -64,82 +49,31 @@ const NoticiaAberta = () => {
     }, [id]);
 
 
-    const setChosenFile = (dataFile) => {
-        setFile(dataFile);
-    }
-
-    const setImage = (dataImage) => {
-        setChosenImage(dataImage);
-    }
-
-    const handleChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setNoticia(noticia => ({ ...noticia, [name]: value }));
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setMessage("");
-        setSuccessful(false);
-
-        NoticiaService.alterar(file, id, noticia).then(
-            (response) => {
-                setMessage(response.data.message);
-                setSuccessful(true);
-                console.log(response.data.message)
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-            }, (error) => {
-                const resMessage =
-                    (error.response &&
-                        error.response.data &&
-                        error.response.data.message) ||
-                    error.message ||
-                    error.toString();
-
-                setMessage(resMessage);
-                setSuccessful(false);
-            }
-        )
-    }
-
-    const publicar = (e) => {
-        e.preventDefault();
-        setSuccessful(false);
-
-        NoticiaService.publicar(id).then(
-            (response) => {
-                setMessage(response.data.message);
-                setSuccessful(true);
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })
-            }, (error) => {
-                const message = error.response.data.message;
-                setMessage(message);
-            }
-        )
-    }
-
     return (
-        <>
-            <div className="d-flex">
-                <Sidebar />
-                <div className="p-3 w-100">
-                    <Header
-                        goto={'/noticia'}
-                        title={LogoTitulo}
-                        logo={logo}
-                    />
-                    <section className="m-2 p-2 shadow-lg">
+        <div>
+            <Header />
+            <section className="m-2 p-2 shadow-lg">
+                <form className="row g-3 m-3 p-3 border shadow rounded-2">
+                    <>  
+                    <h1 className="bold text-center">{noticia.manchete}</h1>
+                    <div className="m-2 text-center">
+                        
+                        <p className="text-end">Data de publicação: {noticia.dataPublicacao}</p>
+                        <p className="text-end">Nome do autor: {noticia.usuario.nome}</p>
+                        <img src={noticia.foto ? 'data:image/jpeg;base64,' + noticia.foto : foto} alt="img noticia" width="650px" height="650px"/> <br />
+                        
+                        <p className="">{noticia.conteudo}</p>
+                        <p className="">Palavras-chave: {noticia.palavrasChave}</p>
+                        <p className="">Fontes: {noticia.fonte}</p>
                     
-                    </section>
-                </div></div>
-        </>
+                    </div>
+                    </>
+
+                </form>
+            </section>
+
+            <Footer />
+        </div>
 
 
     )
