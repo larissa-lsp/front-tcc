@@ -83,7 +83,7 @@ const NoticiaAberta = () => {
                     <div className="modal-content">
                         <h2>Atenção!</h2>
                         <p>Este conteúdo é exclusivo do app mobile.</p>
-                        <p>Baixe nosso aplicativo "Portal360" para ter acesso as notícias.</p>
+                        <p>Baixe nosso aplicativo "Portal360" para ter acesso as notícias e comentá-las.</p>
                         <button className="btn btn-primary" onClick={handleContinue}>Início</button>
                     </div>
                 </div>
