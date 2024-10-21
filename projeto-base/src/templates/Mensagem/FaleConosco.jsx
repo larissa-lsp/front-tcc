@@ -1,5 +1,7 @@
 import { useState } from "react"
 import MensagemService from "../../services/MensagemService"
+import Header from "../../templates/HeaderNoticia/HeaderNoticia"
+import Footer from "../../templates/Footer/Footer"
 import './FaleConosco.css'
 import faleconos from '../../assets/images/faleConoscoIMG.png'
 import IconeLogo from '../../assets/images/IconeLogo.png'
@@ -57,6 +59,7 @@ const FaleConosco = () => {
 
     return (
         <>
+        <Header/>
             <div className="maior">
                 <div className="forms">
                     <form className="form-fale row g-2" onSubmit={handleSubmit}>
@@ -94,7 +97,7 @@ const FaleConosco = () => {
                                             onChange={handleChange}  ><br />
                                         </textarea>
                                     </div>
-                                    <div className="col-md-12 mb-1"><br />
+                                    <div className="col-md-12 mb-1 containerBtn"><br />
                                         <button className="btn" type="button" onClick={backto}>Voltar</button>
                                         <button className="btn" type="submit">Enviar</button>
                                     </div>
@@ -126,6 +129,7 @@ const FaleConosco = () => {
                 </div>
 
             </div>
+            <Footer/>
         </>
     )
 }

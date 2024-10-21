@@ -29,7 +29,7 @@
 }
 
 .title-2 {
-  color: #fff;
+  color: #0062B2;
   font-size: 30px;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .description-primary {
-  color: #fff;
+  color: #0062B2;
   font-weight: bold;
   font-size: 25px;
   text-align: center;
@@ -108,5 +108,10 @@
   align-items: center;
   flex-direction: column;
   flex: 40%;
-  background-color: #0062B2;
+}
+
+.containerBtn{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "../../templates/HeaderNoticia/HeaderNoticia"
+import Footer from "../../templates/Footer/Footer"
 import grupo from '../../assets/images/grupo-imgLogin.png';
 import logo from '../../assets/images/IconeLogo.png'
 import UsuarioService from "../../services/UsuarioService";
@@ -66,7 +68,8 @@ const Login = () => {
     
 
     return (
-
+        <>
+        <Header />
         <section className="containerCad">
             <div className="content first-content">
 
@@ -119,7 +122,7 @@ const Login = () => {
                 </div>
             </div>
         </section>
-
+        </>
     )
 }
 
