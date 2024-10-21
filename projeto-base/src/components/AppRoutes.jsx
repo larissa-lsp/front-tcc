@@ -24,7 +24,7 @@ import NoticiaEditar from "../templates/Noticia/NoticiaEditar"
 import NoticiaNova from "../templates/Noticia/NoticiaNova"
 import NoticiasLista from "../templates/Noticia/NoticiasLista"
 import HistoricoNoticia from "../templates/Noticia/HistoricoNoticia"
-import NoticiaAberta from "../templates/Noticia/NoticiaAberta"
+import NoticiaAberta from "../templates/NoticiaAberta/NoticiaAberta"
 import SuccessPage from "../templates/Success/SuccessPage"
 import SuccessPageAdmin from "../templates/Success/SuccessPageAdmin"
 
